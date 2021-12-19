@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="more-info pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="more-info-content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="left-image">
+                <img src="{% static 'assets/images/more-info.jpg' %}" alt="">
+              </div>
+            </div>
+            
+            <div class="col-md-6 align-self-center">
+              <div class="right-content">
+                <span> {{ object.title}}</span>
+                    <h2> {{ object.heading}}</h2>
+                    <p>{% if object.description %} {{ object.description }} {% else %}  Description coming soon  {% endif %}<br><br>{{ object.description}}</p>
+                <a href="{% url 'about' %}" class="filled-button">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock %}
