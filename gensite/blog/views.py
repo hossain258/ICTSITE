@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from.models import aboutus
+from.models import contactus
 
 # Create your views here.
 
@@ -22,10 +23,21 @@ def about(request):
     return render(request, 'about.html', context=diction)
 
 def contact(request):
+    if request.method == "POST":
+        name = request.POST['name']
+        email = request.POST['email']
+        phone_Number = request.POST['phone_Number']
+        message = request.POST['message']
+        values = contactus(name=name, email=email,phone_Number=phone_Number,message=message)        
+        values.save()
+        return render (request, 'sendmsg.html')
+        
+    
+    
     diction = {
         
         'Title': 'Contact'
-    }
+     }
     return render(request, 'contact.html', context=diction)
 
 def services(request):

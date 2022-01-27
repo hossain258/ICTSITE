@@ -8,3 +8,13 @@ class aboutus(models.Model):
     
     def __str__(self) :
         return self.title
+    
+class contactus(models.Model):
+    name = models.CharField(max_length=25)
+    email = models.CharField(max_length=20)
+    phone_Number =  models.CharField(max_length=20)
+    message = models.TextField()
+    date_created= models.DateTimeField(auto_now_add=True)
+    
+    
+ 
