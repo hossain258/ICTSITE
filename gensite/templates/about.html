@@ -20,8 +20,9 @@
               <div class="right-content">
                 <span> {{ object.title}}</span>
                     <h2> {{ object.heading}}</h2>
-                    <p>{% if object.description %} {{ object.description }} {% else %}  Description coming soon  {% endif %}<br><br>{{ object.description}}</p>
-                <a href="{% url 'about' %}" class="filled-button">Read More</a>
+                    <p>{{ object.description }}</p>
+                    {% comment %} <p>{% if object.description %} {{ object.description|slice: ':100' }} {% else %}  Description coming soon  {% endif %}<br><br>{{ object.description|slice: ':100'}}</p> {% endcomment %}
+                {% comment %} <a href="{% url 'about' %}" class="filled-button">Read More</a> {% endcomment %}
               </div>
             </div>
           </div>
