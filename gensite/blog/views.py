@@ -10,7 +10,7 @@ def home(request):
     # qs  = services.objects.all()
     obj = aboutus.objects.all()[0]
     # qs = aboutus.objects.all()
-    # qs = services.objects.all()
+    qs = services.objects.all()
     
    
    
@@ -18,7 +18,7 @@ def home(request):
         
         'object':obj,
         'Title': 'Home',
-        # 'qs':qs,
+        'qs':qs,
         
         
     }
@@ -54,14 +54,23 @@ def contact(request):
      }
     return render(request, 'contact.html', context=diction)
 
-def services(request):
-    #  qs = services.objects.all()
-     diction = {
+def service(request):
+    qs = services.objects.all()
+    diction = {
         'Title':'services',
-        #  'qs':qs
+        'qs':qs
     }
-     return render(request, 'services.html', context=diction)
+    return render(request, 'services.html', context=diction)
 
+def serviceDetails(request, id):
+    qs = services.objects.get(id=id)
+    diction = {
+        'Title':'services details',
+        'qs':qs
+    }
+    return render(request, 'service_details.html', context=diction)
+    
+    
 def client(request):
     diction = {
         'Title':'client'

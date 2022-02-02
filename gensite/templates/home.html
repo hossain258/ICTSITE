@@ -27,7 +27,7 @@
                   <h6>we are here to support you</h6>
                   <h4>Accounting<br>&amp; Management</h4>
                   <p>You are allowed to use this template for your company websites. You are NOT allowed to re-distribute this template ZIP file on any template download website. Please contact TemplateMo for more detail.</p>
-                  <a href="{% url 'services' %}" class="filled-button">our services</a>
+                  <a href="{% url 'service' %}" class="filled-button">our services</a>
                 </div>
             </div>
           </div>
@@ -78,7 +78,7 @@
                   <div class="right-content">
                     <span> {{ object.title}}</span>
                     <h2> {{ object.heading}}</h2>
-                    <p>{% if object.description %} {{ object.description|slice:":100" }} {% else %}  Description coming soon  {% endif %}<br><br></p>
+                    <p>{% if object.description %} {{ object.description|slice:":577" }} {% else %}  Description coming soon  {% endif %}<br><br></p>
                     <a href="{% url 'about' %}" class="filled-button">Read More</a>
                   </div>
                 </div>
@@ -109,8 +109,8 @@
               <img src="{% static 'assets/images/service_01.jpg' %}" alt="">
               <div class="down-content">
                 <h4> {{ i.title }}</h4>
-                <p>{{ i.description}}</p>
-                <a href="" class="filled-button">Read More</a>
+                <p>{{ i.description|slice:":125"}}</p>
+                <a href="{% url 'service-details' id=i.id %}" class="filled-button">Read More</a>
               </div>
             </div>
           </div>
@@ -118,27 +118,9 @@
           {% endfor %}
 
 
-          <div class="col-md-4">
-            <div class="service-item">
-              <img src="{% static 'assets/images/service_01.jpg' %}" alt="">
-              <div class="down-content">
-                <h4>Digital Currency</h4>
-                <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
-                <a href="" class="filled-button">Read More</a>
-              </div>
-            </div>
-          </div>
           
-          <div class="col-md-4">
-            <div class="service-item">
-              <img src="{% static 'assets/images/service_02.jpg' %}" alt="">
-              <div class="down-content">
-                <h4>Market Analysis</h4>
-                <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
-                <a href="" class="filled-button">Read More</a>
-              </div>
-            </div>
-          </div>
+          
+          
           
         </div>
          

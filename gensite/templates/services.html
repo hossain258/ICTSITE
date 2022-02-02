@@ -6,6 +6,7 @@
 
 <div class="services pb-5">
   <div class="container">
+    
     <div class="row">
       <div class="col-md-12">
         <div class="section-heading">
@@ -13,68 +14,22 @@
           <span>Aliquam id urna imperdiet libero mollis hendrerit</span>
         </div>
       </div>
+
+      {% for i in qs %}
       <div class="col-md-4">
         <div class="service-item">
           <img src="{% static 'assets/images/service_01.jpg' %}" alt="">
           <div class="down-content">
-            <h4>Digital Currency</h4>
-            <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
-            <a href="" class="filled-button">Read More</a>
+            <h4> {{ i.title }}</h4>
+            <p>{{ i.description|slice:":125"}}</p>
+            <a href="{% url 'service-details' id=i.id %}" class="filled-button">Read More </a>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="service-item">
-          <img src="{% static 'assets/images/service_02.jpg' %}" alt="">
-          <div class="down-content">
-            <h4>Market Analysis</h4>
-            <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
-            <a href="" class="filled-button">Read More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="service-item">
-          <img src="{% static 'assets/images/service_03.jpg' %}" alt="">
-          <div class="down-content">
-            <h4>Historical Data</h4>
-            <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
-            <a href="" class="filled-button">Read More</a>
-          </div>
-        </div>
-      </div>
+      </div>         
 
-      <div class="col-md-4">
-        <div class="service-item">
-          <img src="{% static 'assets/images/service_03.jpg' %}" alt="">
-          <div class="down-content">
-            <h4>Historical Data</h4>
-            <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
-            <a href="" class="filled-button">Read More</a>
-          </div>
-        </div>
-      </div>
+      {% endfor %}  
 
-      <div class="col-md-4">
-        <div class="service-item">
-          <img src="{% static 'assets/images/service_03.jpg' %}" alt="">
-          <div class="down-content">
-            <h4>Historical Data</h4>
-            <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
-            <a href="" class="filled-button">Read More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="service-item">
-          <img src="{% static 'assets/images/service_03.jpg' %}" alt="">
-          <div class="down-content">
-            <h4>Historical Data</h4>
-            <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
-            <a href="" class="filled-button">Read More</a>
-          </div>
-        </div>
-      </div>
+    
       
 
     </div>
