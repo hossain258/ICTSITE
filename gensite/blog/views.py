@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render 
 from.models import aboutus
 from.models import contactus
 from.models import services
@@ -69,6 +69,7 @@ def serviceDetails(request, id):
         'qs':qs
     }
     return render(request, 'service_details.html', context=diction)
+    
     
     
 def client(request):
