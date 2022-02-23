@@ -3,6 +3,7 @@ from django.shortcuts import render
 from.models import aboutus
 from.models import contactus
 from.models import services
+from.models import clientdata
 
 # Create your views here.
 
@@ -73,8 +74,10 @@ def serviceDetails(request, id):
     
     
 def client(request):
+    cdata = clientdata.objects.all()
     diction = {
-        'Title':'client'
+        'Title':'client',
+        'cdata':cdata
     }
     return render(request, 'client.html', context=diction)
 
