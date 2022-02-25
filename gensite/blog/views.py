@@ -12,7 +12,7 @@ def home(request):
     obj = aboutus.objects.all()[0]
     # qs = aboutus.objects.all()
     qs = services.objects.all()
-    
+    cdata = clientdata.objects.all()
    
    
     diction = {
@@ -20,6 +20,7 @@ def home(request):
         'object':obj,
         'Title': 'Home',
         'qs':qs,
+        'cdata':cdata,
         
         
     }
@@ -65,6 +66,7 @@ def service(request):
 
 def serviceDetails(request, id):
     qs = services.objects.get(id=id)
+    print(qs)
     diction = {
         'Title':'services details',
         'qs':qs
