@@ -4,6 +4,8 @@ from.models import aboutus
 from.models import contactus
 from.models import services
 from.models import clientdata
+from.models import Dynamicslider
+
 
 # Create your views here.
 
@@ -13,6 +15,7 @@ def home(request):
     # qs = aboutus.objects.all()
     qs = services.objects.all()
     cdata = clientdata.objects.all()
+    sliderdata =Dynamicslider.objects.all()
    
    
     diction = {
@@ -21,6 +24,7 @@ def home(request):
         'Title': 'Home',
         'qs':qs,
         'cdata':cdata,
+        'sliderdata':sliderdata,
         
         
     }
@@ -94,3 +98,6 @@ def privacy(request):
         'Title': 'privacy'
     }
     return render(request, 'privacy.html', context=diction)
+
+
+

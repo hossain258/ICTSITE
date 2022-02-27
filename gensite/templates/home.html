@@ -8,61 +8,42 @@
     <!-- Page Content -->
     <!-- Banner Starts Here -->
     <div class="main-banner header-text" id="top">
+
+      
         <div class="Modern-Slider">
           <!-- Item -->
+           
+           {% for i in sliderdata %} 
+
           <div class="item item-1">
             <div class="img-fill">
-              <img src="../static/assets/images/slide_01.jpg" alt="Slider image">
+              <img src="{{ i.image.url  }}" alt="" >
                 <div class="text-content">
                   <h6>we are ready to help you</h6>
-                  <h4>Any IT Works <br>&amp; Consulting</h4>
+                  <h4> {{ i.title }} <br>&amp; Consulting</h4>
                   
                   <a href="{% url 'contact' %}" class="filled-button">contact us</a>
                 </div>
             </div>
           </div>
-          <!-- // Item -->
-          <!-- Item -->
-          <!-- <div class="item item-2">
-            <div class="img-fill" style="background-image: url(../static/assets/images/slide_02.jpg);">
-                <div class="text-content">
-                  <h6>we are here to support you</h6>
-                  <h4>Accounting<br>&amp; Management</h4>
-                  <p>You are allowed to use this template for your company websites. You are NOT allowed to re-distribute this template ZIP file on any template download website. Please contact TemplateMo for more detail.</p>
-                  <a href="{% url 'service' %}" class="filled-button">our services</a>
-                </div>
-            </div>
-          </div> -->
-          <!-- // Item -->
-          <!-- Item -->
-          <!-- <div class="item item-3">
-            <div class="img-fill" style="background-image: url(../static/assets/images/slide_03.jpg);">
-                <div class="text-content">
-                  <h6>we have a solid background</h6>
-                  <h4>Market Analysis<br>&amp; Statistics</h4>
-                  <p>You can download, edit and use this layout for your business website. Phasellus lacinia ac sapien vitae dapibus. Mauris ut dapibus velit cras interdum nisl ac urna tempor mollis.</p>
-                  <a href="{% url 'about' %}" class="filled-button">learn more</a>
-                </div>
-            </div>
-          </div> -->
-          <!-- // Item -->
-        </div>
-    </div>
+
+         {% endfor %} 
+         
+         {% comment %} 
+          <img src="../static/assets/images/slide_01.jpg" alt="" > {% endcomment %}
+          
+          
+
+
+
+          
     <!-- Banner Ends Here -->
 
-    <div class="request-form">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            <h4>Request a call back right now ?</h4>
-            <span>Mauris ut dapibus velit cras interdum nisl ac urna tempor mollis.</span>
-          </div>
-          <div class="col-md-4">
-            <a href="{% url 'contact' %}" class="border-button">Contact Us</a>
-          </div>
-        </div>
+     
       </div>
-    </div>
+    </div> 
+
+
     <!--start aboout us-->
     <div class="more-info">
       <div class="container">

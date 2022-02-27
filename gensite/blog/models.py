@@ -42,6 +42,19 @@ class clientdata(models.Model):
     
     def __str__(self) :
         return self.title
+    
+
+class Dynamicslider(models.Model):    
+    title = models.CharField( max_length=200, )
+    image = models.ImageField(blank=True, null = True, upload_to ='dynamic_slider_images')
+    
+    
+    def __str__(self) :
+        return self.title
+    
+    
+   
+
 
 
     
