@@ -383,9 +383,9 @@ header .navbar {
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
-	height:95vh;
+	height:75vh;
 }
-
+/* 
 .Modern-Slider .item-1 .img-fill {
 	background-image: url(../images/slide_01.jpg);
 }
@@ -396,7 +396,7 @@ header .navbar {
 
 .Modern-Slider .item-3 .img-fill {
 	background-image: url(../images/slide_03.jpg);
-}
+} */
 
 .Modern-Slider .NextArrow{
   position:absolute;
