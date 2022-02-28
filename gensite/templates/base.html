@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/templatemo-finance-business.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
 <!--
 
 Finance Business TemplateMo
@@ -64,9 +65,12 @@ https://templatemo.com/tm-545-finance-business
     </div>
 
     <header class="">
-      <nav class="navbar navbar-expand-lg bg-dark">
+      <nav class="navbar navbar-expand-lg bg-light">
          <div class="container">
-          <a class="navbar-brand" href="{% url 'home' %}"><h2>Next Gen solution Ltd</h2></a>
+          <a class="navbar-brand" href="{% url 'home' %}">
+            <img class="site-logo" src="{% static 'assets/images/logo.png' %}" alt="">
+            <!-- <h2>Next Gen solution Ltd</h2> -->
+          </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -82,6 +86,12 @@ https://templatemo.com/tm-545-finance-business
               </li>  
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'service' %}">Our Services</a>
+                <ul class="new-dropdown-item">
+                  <li><a href="#">New dropdwon menu</a></li>
+                  <li><a href="#">New dropdwon menu</a></li>
+                  <li><a href="#">New dropdwon menu</a></li>
+                  <li><a href="#">New dropdwon menu</a></li>
+                </ul>
               </li>                          
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'client' %}">Client</a>
