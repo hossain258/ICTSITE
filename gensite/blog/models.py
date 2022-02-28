@@ -6,8 +6,8 @@ from ckeditor.fields import RichTextField
 
 # Create your models here.
 class aboutus(models.Model):
-    title = models.CharField(max_length=200)
-    heading = models.CharField(max_length=300)
+    title = models.CharField(max_length=300)
+    #heading = models.CharField(max_length=300)
     # description = models.TextField(max_length=1200)
     description = RichTextField( blank =True, null = True)
     

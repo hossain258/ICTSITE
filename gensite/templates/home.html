@@ -56,8 +56,7 @@
                 
                 <div class="col-md-6 align-self-center">
                   <div class="right-content">
-                    <span> {{ object.title}}</span>
-                    <h2> {{ object.heading}}</h2>
+                    <h1> {{ object.title}}</h1>                    
                     <p>{% if object.description %} {{ object.description|slice:":577" }} {% else %}  Description coming soon  {% endif %}<br><br></p>
                     <a href="{% url 'about' %}" class="filled-button">Read More</a> <br><br>
                     <a href="{% static 'assets/images/company_info.pdf' % }" target="blank"  class=" filled-button " style=" border-radius:30px;">Compamy Profile &nbsp<i class="fa fa-file-pdf-o" style = "font-size:30px; color:red"></i> </a>
