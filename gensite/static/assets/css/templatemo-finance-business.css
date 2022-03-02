@@ -255,7 +255,7 @@ header .navbar {
 	box-shadow: 0px 1px 10px rgba(0,0,0,0.1);
 }
 .background-header .navbar-brand h2 {
-	color: #01bbf0!important;
+	color: #01bbf0  !important;
 }
 .background-header .navbar-nav a.nav-link {
 	color: #1e1e1e!important;
@@ -265,7 +265,7 @@ header .navbar {
 .background-header .navbar-nav .nav-link.current,
 .background-header .navbar-nav .nav-link.show,
 .background-header .navbar-nav .show>.nav-link {
-	color: #01bbf0!important;
+	color: #01bbf0  !important;
 }
 .navbar .navbar-brand {
 	float: 	left;
@@ -383,7 +383,7 @@ header .navbar {
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
-	height:60vh;
+	height:75vh;
 }
 /* 
 .Modern-Slider .item-1 .img-fill {
@@ -1201,7 +1201,7 @@ footer .contact-form button.filled-button:hover {
 }
 
 .contact-information .contact-item i {
-	color: #01bbf0;
+	color: #01bbf0  !important;
 	font-size: 48px;
 	margin-bottom: 40px;
 }
@@ -1326,14 +1326,14 @@ footer .contact-form button.filled-button:hover {
 	}
 	.navbar .navbar-nav a.nav-link {
 		padding: 15px 0px;
-		color: #1e1e1e!important;
+		color: #1e1e1e !important;
 	}
 	.navbar .navbar-nav .nav-link:hover,
 	.navbar .navbar-nav .active>.nav-link,
 	.navbar .navbar-nav .nav-link.current,
 	.navbar .navbar-nav .nav-link.show,
 	.navbar .navbar-nav .show>.nav-link {
-		color: #01bbf0!important;
+		color: #01bbf0 !important;
 		border-bottom: none!important;
 	}
 }

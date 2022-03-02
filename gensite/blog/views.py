@@ -1,3 +1,4 @@
+from re import template
 from django.http import HttpResponse
 from django.shortcuts import render 
 from.models import aboutus
@@ -5,6 +6,7 @@ from.models import contactus
 from.models import services
 from.models import clientdata
 from.models import Dynamicslider
+from django.views.generic.list import ListView
 
 
 # Create your views here.
@@ -60,20 +62,41 @@ def contact(request):
      }
     return render(request, 'contact.html', context=diction)
 
-def service(request):
-    qs = services.objects.all()
-    diction = {
-        'Title':'services',
-        'qs':qs
-    }
-    return render(request, 'services.html', context=diction)
+# def service(request):
+#     qs = services.objects.all()
+#     diction = {
+#         'Title':'services',
+#         'qs':qs
+#     }
+#     return render(request, 'services.html', context=diction)
+
+
+
+class ServiceListView(ListView):
+
+    model = services
+    template_name = 'services.html'
+    
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['qs'] = services.objects.all()
+        context['Title'] = 'Services'
+        return context
+
+
+
+
+
+
+
 
 def serviceDetails(request, id):
-    qs = services.objects.get(id=id)
-    print(qs)
+    servicedata = services.objects.get(id=id)
+    
     diction = {
         'Title':'services details',
-        'qs':qs
+        'servicedata':servicedata
     }
     return render(request, 'service_details.html', context=diction)
     
