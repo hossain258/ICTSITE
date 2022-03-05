@@ -869,7 +869,6 @@ ul.slick-dots {
 }
 
 .partners {
-	margin-top: 140px;
 	background-color: #f7f7f7;
 	padding: 60px 0px;
 }
@@ -891,18 +890,18 @@ ul.slick-dots {
 footer {
 	background-color: #232323;
 	padding: 80px 0px;
-	color: #fff;
+	color: #ccc;
 }
 
 footer h4 {
-	color: #fff;
+	color: #ccc;
 	font-size: 20px;
 	font-weight: 600;
 	letter-spacing: 0.25px;
 	margin-bottom: 35px;
 }
 footer p {
-	color: #fff;
+	color: #999;
 }
 
 footer ul.social-icons {
@@ -924,7 +923,7 @@ footer ul.social-icons li a {
 	display: inline-block;
 	line-height: 34px;
 	text-align: center;
-	background-color: #fff;
+	background-color: #999;
 	color: #232323;
 	border-radius: 50%;
 	transition: all 0.3s;
@@ -944,7 +943,7 @@ footer ul.menu-list li:last-child {
 
 footer ul.menu-list li a {
 	font-size: 14px;
-	color: #fff;
+	color: #999;
 	transition: all 0.3s;
 }
 

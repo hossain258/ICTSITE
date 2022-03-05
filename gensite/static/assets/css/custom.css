@@ -41,3 +41,18 @@ header .navbar{
 .nav-item:hover .new-dropdown-item{
     display: block;
 }
+.c-profile .fa{
+    font-size: 20px;
+    color: red;
+}
+.service-item{
+    box-shadow: 0 0 10px #ddd;
+    margin-bottom: 30px;
+}
+.service-item:hover{
+    box-shadow: 0 0 18px #01bbf0;
+}
+.location-map{
+    background: #ddd;
+    text-align: left;
+}

@@ -20,7 +20,7 @@
               <div class="right-content">
                 <h1> {{ object.title}}</h1>                    
                     <p>{{ object.description }}</p>
-                    <a href="{% static 'assets/images/company_info.pdf' % }" target="blank"  class=" filled-button " style=" border-radius:30px;">Compamy Profile &nbsp<i class="fa fa-file-pdf-o" style = "font-size:30px; color:red"></i> </a>
+                    <a href="{% static 'assets/images/company_info.pdf' % }" target="blank"  class=" filled-button " style=" border-radius:30px;">Download Compamy Profile &nbsp<i class="fa fa-file-pdf-o" style = "font-size:30px; color:red"></i> </a>
                
                     {% comment %} <p>{% if object.description %} {{ object.description|slice: ':100' }} {% else %}  Description coming soon  {% endif %}<br><br>{{ object.description|slice: ':100'}}</p> {% endcomment %}
                 {% comment %} <a href="{% url 'about' %}" class="filled-button">Read More</a> {% endcomment %}
