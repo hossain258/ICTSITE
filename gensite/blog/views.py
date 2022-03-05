@@ -105,20 +105,20 @@ def serviceDetails(request, id):
 def client(request):
     cdata = clientdata.objects.all()
     diction = {
-        'Title':'client',
+        'Title':'Client',
         'cdata':cdata
     }
     return render(request, 'client.html', context=diction)
 
 def portfolio(request):
     diction = {
-        'Title':'portfolio'
+        'Title':'Portfolio'
     }
     return render(request, 'portfolio.html', context=diction)
 
 def privacy(request):
     diction = {
-        'Title': 'privacy'
+        'Title': 'Privacy Policy'
     }
     return render(request, 'privacy.html', context=diction)
 
