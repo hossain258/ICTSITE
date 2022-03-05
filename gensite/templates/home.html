@@ -56,7 +56,7 @@
                 
                 <div class="col-md-7 align-self-center">
                   <div class="right-content">
-                    <h1> {{ object.title}}</h1>                    
+                    <h1 style=color:blue;> {{ object.title}}</h1>                    
                     <p>{% if object.description %} {{ object.description|slice:":577" }} {% else %}  Description coming soon  {% endif %}</p>
                     <a href="{% url 'about' %}" class="filled-button">Read More</a>
                     <a href="{% static 'assets/images/company_info.pdf' % }" target="blank" class="c-profile float-right pt-2">
