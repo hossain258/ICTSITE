@@ -52,3 +52,7 @@ header .navbar{
 .service-item:hover{
     box-shadow: 0 0 18px #01bbf0;
 }
+.location-map{
+    background: #ddd;
+    text-align: left;
+}
