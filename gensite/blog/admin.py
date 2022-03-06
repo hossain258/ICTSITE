@@ -4,12 +4,14 @@ from.models import contactus
 from.models import services
 from.models import clientdata
 from.models import  Dynamicslider
+from.models import  Portfolio
 
 # Register your models here.
 admin.site.register(aboutus)
 admin.site.register(services)
 admin.site.register(clientdata)
 admin.site.register(Dynamicslider)
+admin.site.register(Portfolio)
 
 # admin.site.register(contactus)
 

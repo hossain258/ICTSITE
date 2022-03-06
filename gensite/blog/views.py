@@ -5,6 +5,7 @@ from.models import aboutus
 from.models import contactus
 from.models import services
 from.models import clientdata
+from.models import Portfolio
 from.models import Dynamicslider
 from django.views.generic.list import ListView
 
@@ -124,8 +125,10 @@ class ClientListView(ListView):
         return context
 
 def portfolio(request):
+    portfdata= Portfolio.objects.all()
     diction = {
-        'Title':'Portfolio'
+        'Title':'Portfolio',
+        'portfdata':portfdata
     }
     return render(request, 'portfolio.html', context=diction)
 

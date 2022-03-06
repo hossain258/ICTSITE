@@ -5,6 +5,17 @@ from ckeditor.fields import RichTextField
 
 
 # Create your models here.
+
+
+class Dynamicslider(models.Model):    
+    title = models.CharField( max_length=200, )
+    image = models.ImageField(blank=True, null = True, upload_to ='dynamic_slider_images')
+    
+    
+    def __str__(self) :
+        return self.title
+    
+    
 class aboutus(models.Model):
     title = models.CharField(max_length=300)
     #heading = models.CharField(max_length=300)
@@ -46,15 +57,18 @@ class clientdata(models.Model):
     def __str__(self) :
         return self.title
     
-
-class Dynamicslider(models.Model):    
-    title = models.CharField( max_length=200, )
-    image = models.ImageField(blank=True, null = True, upload_to ='dynamic_slider_images')
+    
+class Portfolio(models.Model):
+    title =models.CharField(max_length=100)
+    
+    image = models.ImageField(blank=True, null = True, upload_to ='portfolio')
     
     
     def __str__(self) :
         return self.title
     
+
+
     
    
 
