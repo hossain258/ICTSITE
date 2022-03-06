@@ -12,8 +12,8 @@
           <div class="row">
             <div class="col-md-6">
               <div class="left-image">
-                
-                <img src="{{ servicedata.image.url }}"   alt="">
+                {% if servicedata.thumbnail_image %} <img src="{{ servicedata.thumbnail_image.url }}"   alt=""> {% else %}  Image coming soon  {% endif %}
+                {% comment %} <img src="{{ servicedata.thumbnail_image.url }}"   alt=""> {% endcomment %}
                 
               </div>
             </div>

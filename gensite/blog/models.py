@@ -29,6 +29,7 @@ class services(models.Model):
     # description = models.TextField(max_length=1200)
     description = RichTextField( blank =True, null = True)
     image = models.ImageField(blank=True, null = True, upload_to ='services_images')
+    thumbnail_image =models.ImageField(blank=True, null = True, upload_to ='servicesDeatils')
     
     
     def __str__(self) :
