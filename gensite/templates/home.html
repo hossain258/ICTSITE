@@ -4,17 +4,11 @@
 
  {% block content %}
  
-
     <!-- Page Content -->
     <!-- Banner Starts Here -->
     <div class="main-banner header-text" id="top">
-
-      
         <div class="Modern-Slider">
-          <!-- Item -->
-           
-           {% for i in sliderdata %} 
-
+          {% for i in sliderdata %} 
           <div class="item item-1">
             <div class="img-fill">
               <img src="{{ i.image.url  }}" alt="" >
@@ -26,27 +20,55 @@
                 </div>
           </div>
       </div>
-
-          {% endfor %} 
-         
-         {% comment %} 
-          <img src="../static/assets/images/slide_01.jpg" alt="" > {% endcomment %}     
-          
-
-
-
-  </div>
-  
-
+      {% endfor %} 
+      {% comment %} <img src="../static/assets/images/slide_01.jpg" alt="" > {% endcomment %}     
+    </div>
     <!-- Banner Ends Here -->
-
-
+    <div class="feature-sec">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="feature-item wow animate__animated  animate__jackInTheBox">
+              <i class="fa fa-phone"></i>
+              <div class="title-txt">
+                <h5>Optical Fiber Connectivity</h5>                
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="feature-item wow animate__animated  animate__jackInTheBox">
+              <i class="fa fa-globe"></i>
+              <div class="title-txt">
+                <h5>Software & Networking Solutions</h5>                
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="feature-item wow animate__animated  animate__jackInTheBox">
+              <i class="fa fa-mobile"></i>
+              <div class="title-txt">
+                <h5>Underground Power Cabling</h5>                
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="feature-item wow animate__animated  animate__jackInTheBox">
+              <i class="fa fa-wrench"></i>
+              <div class="title-txt">
+                <h5>Supply & Installation</h5>                
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--start aboout us-->
     <div class="more-info">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="more-info-content">
+            <div class="more-info-content wow animate__animated animate__zoomIn">
               <div class="row">
                 <div class="col-md-5">
                   <div class="left-image">
@@ -88,7 +110,7 @@
           {% for i in qs %}
 
           <div class="col-md-4">
-            <div class="service-item">
+            <div class="service-item wow animate__animated animate__zoomIn">
               <a href="{% url 'service-details' id=i.id %}">
                 {% if i.image.url %} <img src="{{ i.image.url }}" width = "350" height ="300"  alt=""> {% else %}  Image coming soon  {% endif %}
                
@@ -224,7 +246,7 @@
             </div>
           </div>
           <div class="col-md-12">
-            <div class="contact-form pb-4">
+            <div class="contact-form pb-4 wow animate__animated animate__zoomIn">
               <form id="contact" action="{% url 'contact' %}" method="post">
                 {% csrf_token %}
                 <div class="row">
@@ -273,7 +295,7 @@
         
         {% for i in cdata %}
         <div class="col-md-12">
-          <div class="owl-partners owl-carousel">
+          <div class="owl-partners owl-carousel wow animate__animated animate__zoomIn">
             <div class="partner-item">
               <img src="{{ i.image.url }}"  width = "140" height ="140" alt="">
               <div class="down-content">

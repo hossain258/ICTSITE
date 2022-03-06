@@ -58,3 +58,28 @@ header .navbar{
     background: #ddd;
     text-align: left;
 }
+.feature-sec{
+    background: #f7f7f7;
+    padding: 25px;
+}
+.feature-sec .feature-item{
+    text-align: center;
+    padding: 25px 0;
+}
+.feature-sec .feature-item:hover{
+    box-shadow: 0 0 15px #ccc;
+    background: #fff;
+}
+.feature-sec .feature-item .fa{
+    text-align: center;
+    font-size: 70px;
+    padding-top: 10px;
+    height: 92px;
+    width: 92px;
+    border: 1px dashed #01bbf0;
+    color: #01bbf0;
+}
+.feature-sec .feature-item .title-txt h5{
+    font-size: 15px;
+    padding-top: 20px;
+}
