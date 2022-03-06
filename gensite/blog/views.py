@@ -102,13 +102,13 @@ def serviceDetails(request, id):
     
     
     
-def client(request):
-    cdata = clientdata.objects.all()
-    diction = {
-        'Title':'Client',
-        'cdata':cdata
-    }
-    return render(request, 'client.html', context=diction)
+# def client(request):
+#     cdata = clientdata.objects.all()
+#     diction = {
+#         'Title':'Client',
+#         'cdata':cdata
+#     }
+#     return render(request, 'client.html', context=diction)
 
 class ClientListView(ListView):
     
