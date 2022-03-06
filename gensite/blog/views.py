@@ -110,6 +110,19 @@ def client(request):
     }
     return render(request, 'client.html', context=diction)
 
+class ClientListView(ListView):
+    
+    model = clientdata
+    template_name = 'client.html'
+    paginate_by = 3
+    
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['cdata'] = clientdata.objects.all()
+        context['Title'] = 'Client'
+        return context
+
 def portfolio(request):
     diction = {
         'Title':'Portfolio'

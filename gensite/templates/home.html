@@ -56,7 +56,7 @@
                 
                 <div class="col-md-7 align-self-center">
                   <div class="right-content">
-                    <h1 style=color:blue;> {{ object.title}}</h1>                    
+                    <h1 style=color:tomato;> {{ object.title|upper}}</h1><br>                   
                     <p>{% if object.description %} {{ object.description|slice:":577" }} {% else %}  Description coming soon  {% endif %}</p>
                     <a href="{% url 'about' %}" class="filled-button">Read More</a>
                     <a href="{% static 'assets/images/company_info.pdf' % }" target="blank" class="c-profile float-right pt-2">
@@ -94,7 +94,7 @@
                
                 </a>
               <div class="down-content">
-                <h4> {{ i.title }}</h4>
+                <h4 style=color:tomato;> {{ i.title }}</h4>
                 <p>{{ i.description|slice:":125"}}</p>
                 <a href="{% url 'service-details' id=i.id %}" class="filled-button">Read More</a>
               </div>
@@ -270,13 +270,14 @@
     </div>
     <div class="container">
       <div class="row">
+        
         {% for i in cdata %}
         <div class="col-md-12">
           <div class="owl-partners owl-carousel">
             <div class="partner-item">
-              <img src="{{ i.image.url }}"  width = "150" height ="150" alt="">
+              <img src="{{ i.image.url }}"  width = "140" height ="140" alt="">
               <div class="down-content">
-                <h5>{{ i.title }}</h5>                
+                <p style=color:red;>{{ i.title }}</p>                
               </div>
             </div>
           </div>

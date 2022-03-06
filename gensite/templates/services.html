@@ -23,7 +23,7 @@
             {% comment %} <img src="/media/{{ i.image }}"  width = "350" height ="300" alt=""> {% endcomment %}
             </a>      
           <div class="down-content">
-            <h4> {{ i.title }} </h4>
+            <h4 style=color:tomato;> {{ i.title }} </h4>
             <p>{{ i.description|slice:":125"}}</p>
             <a href="{% url 'service-details' id=i.id %}" class="filled-button">Read More </a>
           </div>

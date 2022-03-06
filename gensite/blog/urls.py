@@ -7,7 +7,7 @@ urlpatterns = [
     path('contact', views.contact, name='contact'),
     path('services/', views.ServiceListView.as_view(), name='service'),
     path('service-details/<int:id>/', views.serviceDetails, name='service-details'),
-    path('client/', views.client, name='client'),
+    path('client/', views.ClientListView.as_view(), name='client'),
     path('portfolio/', views.portfolio, name='portfolio'),
     path('privacy/', views.privacy, name='privacy'),
 ]
