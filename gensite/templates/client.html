@@ -1,35 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<div class="section-heading">
-<h2>Our <em>Client</em></h2>
-
-</div>
-    
-
-    <div class="partners">
-     <div class="container">
-        <div class="row">
-        <div class="col-md-12">
-            <div class="owl-partners owl-carousel">
-            
-            {% for i in cdata %}
-            
-                <div class="partner-item">
-                 <img src="{{ i.image.url }}" title="1" width = "150" height ="150" alt="1">
-             </div>
-
-            {% endfor %}
-
-
-            
-        
-            
+    <div class="partners pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading pt-5">
+                        <br><br>
+                        <h2>Our <em>clients</em></h2>
+                        <span>Aliquam id urna imperdiet libero mollis hendrerit</span>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="owl-partners owl-carousel">
+                    {% for i in cdata %}
+                    <div class="partner-item">
+                        <img src="{{ i.image.url }}" title="1" width = "150" height ="150" alt="1">
+                    </div>
+                    {% endfor %}
+                    </div>
+                </div>
             </div>
         </div>
-        </div>
     </div>
-</div>
-
     {% endblock %}

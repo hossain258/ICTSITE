@@ -17,7 +17,7 @@
 
       {% for i in qs %}
       <div class="col-md-4">
-        <div class="service-item" >
+        <div class="service-item wow animate__animated animate__zoomIn" >
           <a href="{% url 'service-details' id=i.id %}">
             {% if i.image.url %} <img src="{{ i.image.url }}" width = "350" height ="300"  alt=""> {% else %}  Image coming soon  {% endif %}
             {% comment %} <img src="/media/{{ i.image }}"  width = "350" height ="300" alt=""> {% endcomment %}
