@@ -11,10 +11,19 @@ header .navbar{
 .navbar .navbar-brand{
     margin: 0px !important;
 }
+.navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .active>.nav-link, .navbar .navbar-nav .nav-link.current, .navbar .navbar-nav .nav-link.show, .navbar .navbar-nav .show>.nav-link {
+    color: #01bbf0;
+    border-bottom: 4px solid #01bbf0 !important;
+}
+
+.nav-link {
+    padding: 42px 10px !important;
+}
 .new-dropdown-item{
     display: none;
     position: absolute;
-    width: 250px;
+    width: 270px;
+    box-shadow: 5px 5px 10px #01bbf0
 }
 .new-dropdown-item{
     padding: 0;
@@ -24,16 +33,28 @@ header .navbar{
     padding: 0;
     margin: 0;
 }
-.new-dropdown-item li a{
-    display: block;
-    padding: 5px 15px;
+.new-dropdown-item li a:hover {
+    border-left: 5px solid #01bbf0;
     color: #01bbf0 !important;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.new-dropdown-item li a {
+    display: block;
+    padding: 6px 20px;
+    font-size: 14px;
+    color: #616161 !important;
     background: #fff;
     text-align: left;
-}
-.new-dropdown-item li a:hover{
-    background: #01bbf0;
-    color: #000 !important;
+    border-bottom: 1px solid #01bbf0;
+    -webkit-transition: all .3s ease;
+-moz-transition: all .3s ease;
+-ms-transition: all .3s ease;
+-o-transition: all .3s ease;
+transition: all .3s ease;
 }
 .nav-item{
     position: relative;
@@ -49,9 +70,21 @@ header .navbar{
     box-shadow: 0 0 10px #ddd;
     margin-bottom: 30px;
     
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    
 }
 .service-item:hover{
     box-shadow: 0 0 20px #01bbf0;
+    
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
     
 }
 .location-map{
@@ -65,10 +98,22 @@ header .navbar{
 .feature-sec .feature-item{
     text-align: center;
     padding: 25px 0;
+    
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
 }
 .feature-sec .feature-item:hover{
     box-shadow: 0 0 15px #ccc;
     background: #fff;
+    
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
 }
 .feature-sec .feature-item .fa{
     text-align: center;
