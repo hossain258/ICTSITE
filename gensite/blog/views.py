@@ -7,6 +7,7 @@ from.models import services
 from.models import clientdata
 from.models import Portfolio
 from.models import Dynamicslider
+from.models import Gallery
 from django.views.generic.list import ListView
 
 
@@ -142,6 +143,16 @@ def privacy(request):
         'Title': 'Privacy Policy'
     }
     return render(request, 'privacy.html', context=diction)
+
+
+
+def gallery(request):
+    galrdata= Gallery.objects.all()
+    diction = {
+        'Title':'Gallery',
+        'galrdata':galrdata
+    }
+    return render(request, 'Gallery.html', context=diction)
 
 
 

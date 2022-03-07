@@ -109,9 +109,12 @@ https://templatemo.com/tm-545-finance-business
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'client' %}">CLIENT</a>
               </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'portfolio' %}">PORTFOLIO</a>
               </li>
+
+              
               
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'contact' %}"> CONTACT US</a>
@@ -141,7 +144,7 @@ https://templatemo.com/tm-545-finance-business
       <div class="container">
         <div class="row">
           <div class="col-md-3 footer-item">
-            <h4>NextGen Solution</h4>
+            <h4>ICTINEX SOLUTION</h4>
             <p>We aim to facilitate citizen life, coordinates it with IT by practising the better, efficient and smart technologies, which effectively plays a crucial role in shaping the client's imagination and produces more value.</p>
             <ul class="social-icons">
               <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
@@ -151,29 +154,29 @@ https://templatemo.com/tm-545-finance-business
             </ul>
           </div>
           <div class="col-md-3 footer-item">
-            <h4>Useful Links</h4>
+            <h4>USEFUL LINKS</h4>
             <ul class="menu-list">
               <li><a href="{% static 'assets/images/company_info.pdf' % }" target="blank" class="c-profile ">
-              Compamy Profile &nbsp <i class="fa fa-file-pdf-o"></i>  
+              COMPANY PROFILE &nbsp <i class="fa fa-file-pdf-o"></i>  
               </a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Photo Galary</a></li>
-              <li><a href="#">Testimonial</a></li>
-              <li><a href="#">News</a></li>
+              <li><a href="{% url 'service' %}">SERVICES</a></li>
+              <li><a href="{% url 'gallery' %}">EVENT & GALLERY </a></li>
+              <li><a href="#">TESTIOMONIAL</a></li>
+              <li><a href="#">NEWS</a></li>
             </ul>
           </div>
           <div class="col-md-3 footer-item">
-            <h4>Additional Pages</h4>
+            <h4>ADDITIONAL PAGES</h4>
             <ul class="menu-list">
-              <li><a href="{% url 'about' %}">About Us</a></li>
-              <li><a href="#">How We Work</a></li>
-              <li><a href="#">Quick Support Please </a></li>
-              <li><a href="{% url 'contact' %}">Contact Us</a></li>
-              <li><a href="{% url 'privacy' %}">Privacy Policy</a></li>
+              <li><a href="{% url 'about' %}">ABOUT US</a></li>
+              <li><a href="#">HOW WE WORK</a></li>
+              <li><a href="{% url 'contact' %}">QUICK SUPPORT PLEASE </a></li>
+              <li><a href="{% url 'contact' %}">CONTACT US</a></li>
+              <li><a href="{% url 'privacy' %}">PRIVACY POLICY</a></li>
             </ul>
           </div>
           <div class="col-md-3 footer-item last-item">
-            <h4>Contact Us</h4>
+            <h4>CONTACT US</h4>
             <div class="contact-form">
               <form id="contact" action="{% url 'contact' %}" method="post">
                 {% csrf_token %}

@@ -5,6 +5,7 @@ from.models import services
 from.models import clientdata
 from.models import  Dynamicslider
 from.models import  Portfolio
+from.models import  Gallery
 
 # Register your models here.
 admin.site.register(aboutus)
@@ -12,6 +13,7 @@ admin.site.register(services)
 admin.site.register(clientdata)
 admin.site.register(Dynamicslider)
 admin.site.register(Portfolio)
+admin.site.register(Gallery)
 
 # admin.site.register(contactus)
 
