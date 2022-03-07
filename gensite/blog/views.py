@@ -115,7 +115,12 @@ class ClientListView(ListView):
     
     model = clientdata
     template_name = 'client.html'
-    paginate_by = 3
+    paginate_by = 1
+    context_object_name ='cdata'
+    
+    # def get_queryset(self):
+    #     return clientdata.objects.all()
+    
     
 
     def get_context_data(self, **kwargs):
