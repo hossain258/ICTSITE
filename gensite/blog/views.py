@@ -1,13 +1,14 @@
 from re import template
 from django.http import HttpResponse
 from django.shortcuts import render 
-from.models import aboutus
+from.models import Team, aboutus
 from.models import contactus
 from.models import services
 from.models import clientdata
 from.models import Portfolio
 from.models import Dynamicslider
 from.models import Gallery
+from.models import Team
 from django.views.generic.list import ListView
 
 
@@ -153,6 +154,15 @@ def gallery(request):
         'galrdata':galrdata
     }
     return render(request, 'Gallery.html', context=diction)
+
+
+def team(request):
+    tmdata= Team.objects.all()
+    diction = {
+        'Title':'Team',
+        'tmdata':tmdata
+    }
+    return render(request, 'team.html', context=diction)
 
 
 
