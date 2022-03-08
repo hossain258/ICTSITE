@@ -23,19 +23,16 @@
             
             <div class="col-md-6 align-self-center">
               <div class="right-content">
-                <h1 style=color:tomato;> {{ object.title|upper}}</h1><br>                   
-                    <p>{{ object.description }}</p>
-                    
-                    <a href="{% static 'assets/images/company_info.pdf' % }" target="blank" class="c-profile float-right pt-2">
-                      Download Compamy Profile &nbsp <i class="fa fa-file-pdf-o"></i> 
-                    </a>
-               
-                    {% comment %} <p>{% if object.description %} {{ object.description|slice: ':100' }} {% else %}  Description coming soon  {% endif %}<br><br>{{ object.description|slice: ':100'}}</p> {% endcomment %}
-                {% comment %} <a href="{% url 'about' %}" class="filled-button">Read More</a> {% endcomment %}
+                  <h1> {{ object.title|upper}}</h1>
+                  <br>                   
+                  <p>{{ object.description }}</p>
               </div>
             </div>
           </div>
         </div>
+        <a href="{% static 'assets/images/company_info.pdf' % }" target="blank" class="mt-4 mb-5 pt-3 filled-button c-profile float-right pt-2">
+          Download Compamy Profile &nbsp <i class="fa fa-file-pdf-o"></i> 
+        </a>
       </div>
     </div>
   </div>

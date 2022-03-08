@@ -66,6 +66,10 @@ transition: all .3s ease;
     font-size: 20px;
     color: red;
 }
+.filled-button .fa{
+    font-size: 16px;
+    color: #fff;
+}
 .service-item{
     box-shadow: 0 0 10px #ddd;
     margin-bottom: 30px;
@@ -127,4 +131,9 @@ transition: all .3s ease;
 .feature-sec .feature-item .title-txt h5{
     font-size: 15px;
     padding-top: 20px;
+}
+.pp-txt{
+    margin-bottom: 50px;
+    padding: 35px;
+    background: #f7f7f7;
 }
