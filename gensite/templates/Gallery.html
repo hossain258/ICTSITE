@@ -9,26 +9,22 @@
     
     <div class="row">
       <div class="col-md-12">
-        <div class="section-heading">
+        <div class="section-heading pt-5">
           <h2>OUR EVENT & <em>PHOTO GALLERY</em></h2>
           
         </div>
       </div>
 
       {% for i in galrdata %}
-      <div class="col-md-4">
-        <div class="service-item wow animate__animated animate__zoomIn" >
-        <a href ="" ><img src="{{ i.image.url }}"  width = "300" height ="300" alt=""> </a>   
-          <div class="down-content">
-            <p style= color:tomato;> {{ i.title }} </p>
-          </div>
+        <div class="col-lg-4">
+          <a href="{{ i.image.url }}" data-lightbox="example-set" data-title="{{ i.title }}">
+            <img class="example-image w-100 mb-4" src="{{ i.image.url }}" alt="image-1"/>
+          </a>
         </div>
-      </div>
-
-      {% endfor %} 
+        {% endfor %} 
       
     </div>
 </div>
 </div>
-      
-      {% endblock %}
+
+{% endblock %}
