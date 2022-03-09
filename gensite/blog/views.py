@@ -118,10 +118,8 @@ class ClientListView(ListView):
     model = clientdata
     template_name = 'client.html'
     paginate_by = 1
-    context_object_name ='cdata'
-    
-    # def get_queryset(self):
-    #     return clientdata.objects.all()
+    context_object_name ='cdata'    
+ 
     
     
 
@@ -138,6 +136,16 @@ def portfolio(request):
         'portfdata':portfdata
     }
     return render(request, 'portfolio.html', context=diction)
+
+
+def portfolioDetails(request, id):
+    portfoliodata = Portfolio.objects.get(id=id)    
+    diction ={
+        'Title':'Portfolio details',
+        'portfoliodata':portfoliodata
+    }
+    return render(request, 'portfolio_details.html', context=diction)
+
 
 def privacy(request):
     diction = {

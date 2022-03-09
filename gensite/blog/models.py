@@ -61,7 +61,7 @@ class clientdata(models.Model):
 class Portfolio(models.Model):
     title =models.CharField(max_length=100)    
     image = models.ImageField(blank=True, null = True, upload_to ='portfolio')
-    Description = RichTextField( blank =True, null = True)
+    description = models.CharField(max_length=500,blank=True,null=True)
     
     
     def __str__(self) :

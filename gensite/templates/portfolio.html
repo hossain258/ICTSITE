@@ -15,12 +15,18 @@
         </div>
       </div>
 
+      {% if i.description %}
+
+      <p>{{ portfoliodata.Description }} </p>
+
+      {% else %} {% endif %}
       {% for i in portfdata %}
       <div class="col-md-4">
         <div class="service-item wow animate__animated animate__zoomIn" >
-        <a href ="" ><img src="{{ i.image.url }}"  width = "300" height ="300" alt=""> </a>   
+        <a href ="{% url 'portfolio-details' id=i.id %}" ><img src="{{ i.image.url }}"  width = "300" height ="300" alt=""> </a>   
           <div class="down-content">
             <h4> {{ i.title }} </h4>
+            
           </div>
         </div>
       </div>
