@@ -3,9 +3,19 @@
 {% block content %}
 
 
-<div class="sendmsg pb-5" pb-2> <h1> The message has been successfully submitted.Someone will get back to you shortly</h1>
-</div>
-
+<div class="portfolio-details mt-5 pt-5 " style="text-align: center;">
+    <div class="container mt-5 mb-4">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="sendmsg m-5 p-5 alert alert-success"> 
+                    <h2>The message has been successfully submitted. Someone will get back to you shortly</h2>
+                </div>
+                <a href="{% url 'home' %}" class="back-btn p-5">
+                    Back to the Home page 
+                </a>
+            </div>   
+        </div>
+    </div>
 </div>
 
 

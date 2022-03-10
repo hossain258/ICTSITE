@@ -137,3 +137,10 @@ transition: all .3s ease;
     padding: 35px;
     background: #f7f7f7;
 }
+.back-btn{
+	text-align: center;
+    display: block;
+}
+.sendmsg{
+    text-align: center;
+}
