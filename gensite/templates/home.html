@@ -81,9 +81,11 @@
                     <h1 style=color:tomato;> {{ object.title|upper}}</h1><br>                   
                     <p>{% if object.description %} {{ object.description|slice:":577" }} {% else %}  Description coming soon  {% endif %}</p>
                     <a href="{% url 'about' %}" class="filled-button">Read More</a>
-                    <a href="{% static 'assets/images/company_info.pdf' % }" target="blank" class="c-profile float-right pt-2">
+                    {% if object.files %}
+                    <a href="{{ object.files.url }}" target="blank" class="c-profile float-right pt-2">
                       Download Compamy Profile &nbsp <i class="fa fa-file-pdf-o"></i> 
                     </a>
+                    {% endif %}
                   </div>
                 </div>
               </div>

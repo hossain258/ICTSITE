@@ -30,9 +30,11 @@
             </div>
           </div>
         </div>
-        <a href="{% static 'assets/images/company_info.pdf' % }" target="blank" class="mt-4 mb-5 pt-3 filled-button c-profile float-right pt-2">
+        {% if object.files %}
+        <a href="{{ object.files.url }}" target="blank" class="mt-4 mb-5 pt-3 filled-button c-profile float-right pt-2">
           Download Compamy Profile &nbsp <i class="fa fa-file-pdf-o"></i> 
         </a>
+        {% endif %}
       </div>
     </div>
   </div>

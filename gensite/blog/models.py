@@ -21,6 +21,7 @@ class aboutus(models.Model):
     #heading = models.CharField(max_length=300)
     # description = models.TextField(max_length=1200)
     image = models.ImageField(blank=True, null = True, upload_to ='about')
+    files =models.FileField(blank=True, null = True, upload_to ='about')
     
     description = RichTextField( blank =True, null = True)
     
