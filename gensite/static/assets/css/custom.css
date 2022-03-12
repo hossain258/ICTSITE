@@ -144,3 +144,68 @@ transition: all .3s ease;
 .sendmsg{
     text-align: center;
 }
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+.dropdown-menu{
+    margin: 0 !important;
+    background-color: #f8f9fa !important;
+    border: 0px solid rgba(0,0,0,.15) !important;
+    border-radius: 0 !important;
+}
+.dropdown-item:focus, .dropdown-item:active, .dropdown-item:hover {
+    background-color: #01bbf0 !important;
+}
+.service-item .down-content h4{
+    font-size: 18px !important;
+}
+.sub-footer p{
+    font-size: 13px !important;
+}
+.c-map{
+    padding: 3rem!important;
+}
+
+@media (max-width: 768px) {
+    .site-logo{
+        width: 250px !important;
+    }
+    .navbar-toggler{
+        background: transparent !important;
+        margin: 20px 0;
+        border: 1px solid #01bbf0 !important;
+        top: 15px !important;
+    }
+    header{
+        height: 100px !important;
+        top: 0px !important;
+    }
+    #navbarResponsive{
+        top: 100px !important;
+    }
+    .nav-link {
+        padding:15px !important;
+    }
+    .c-profile{
+        display: block;
+        float: left !important;
+        padding: 20px 0px !important;
+    }
+    .callback-form .contact-form {
+        padding: 36px !important;
+    }
+    .c-footer{
+        padding: 0px !important;
+        float: none !important;
+    }
+    .c-map{
+        padding: 1rem!important;
+    }
+    .service-item .down-content{
+        padding: 15px !important;
+    }
+    .service-item .down-content h4{
+        font-size: 15px !important;
+    }
+
+}
