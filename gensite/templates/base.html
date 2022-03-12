@@ -90,52 +90,30 @@ https://templatemo.com/tm-545-finance-business
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'about' %}">ABOUT US</a>
               </li>  
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'service' %}">OUR SERVICES</a>
-                <ul class="new-dropdown-item">
-
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">OUR SERVICES</a>
+                <div class="dropdown-menu">
                   {% for i in qs %}
-                  <li><a href="{% url 'service-details' i.id %}">{{ i.title }}</a>
-                  </li>
-
+                  <a class="dropdown-item" href="{% url 'service-details' i.id %}">{{ i.title }}</a>
                   {% endfor %}
-                  {% comment %} <li><a href="#">SOFTWARE DEVELOPMENT</a></li>
-                  <li><a href="#">APPS DEVELOPMENT</a></li>
-                  <li><a href="#">WEB APP DEVELOPMENT</a></li>
-                  <li><a href="#">IT CONSULTING</a></li>
-                  <li><a href="#">NETWORK SOLUTIONS</a></li> {% endcomment %}
-                </ul>
+                  <a class="dropdown-item" href="{% url 'service' %}"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> VIEW ALL SERVICES</a>
+                </div>
               </li>  
-
 
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'client' %}">CLIENT</a>
-                
               </li>
 
-           
-
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'portfolio' %}">PORTFOLIO</a>
-
-                <ul class="new-dropdown-item">
-
-                  
-                  <li><a href="{% url 'gallery' %}">EVENT & GALLERY</a>
-
-                  </li>
-                  <li><a href="{% url 'team' %}">TEAM</a>
-                  </li>
-
-                 
-                </ul>
-
-              
-              
+              <li class="nav-item dropdown">
+                <a  class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">PORTFOLIO</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="{% url 'gallery' %}">EVENT & GALLERY</a>
+                  <a class="dropdown-item" href="{% url 'team' %}">TEAM</a>
+                  <a class="dropdown-item" href="{% url 'portfolio' %}"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> VIEW ALL PORTFOLIO</a>
+                </div>
               </li>
 
-              
-              
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'contact' %}"> CONTACT US</a>
               </li>
@@ -177,7 +155,7 @@ https://templatemo.com/tm-545-finance-business
             <h4>USEFUL LINKS</h4>
             <ul class="menu-list">
               {% if object.files %}
-              <li><a href="{{ object.files.url }}" target="blank" class="c-profile ">
+              <li><a href="{{ object.files.url }}" target="blank" class="c-profile c-footer ">
               COMPANY PROFILE &nbsp <i class="fa fa-file-pdf-o"></i>  
               </a></li>
               {% endif %}

@@ -27,7 +27,7 @@
     <div class="feature-sec">
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-3 col-sm-6">
             <div class="feature-item wow animate__animated  animate__jackInTheBox">
               <i class="fa fa-phone"></i>
               <div class="title-txt">
@@ -35,7 +35,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 col-sm-6">
             <div class="feature-item wow animate__animated  animate__jackInTheBox">
               <i class="fa fa-globe"></i>
               <div class="title-txt">
@@ -43,7 +43,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 col-sm-6">
             <div class="feature-item wow animate__animated  animate__jackInTheBox">
               <i class="fa fa-mobile"></i>
               <div class="title-txt">
@@ -51,7 +51,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 col-sm-6">
             <div class="feature-item wow animate__animated  animate__jackInTheBox">
               <i class="fa fa-wrench"></i>
               <div class="title-txt">
@@ -111,7 +111,7 @@
          
           {% for i in qs %}
 
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-6">
             <div class="service-item wow animate__animated animate__zoomIn">
               <a href="{% url 'service-details' id=i.id %}">
                 {% if i.image.url %} <img src="{{ i.image.url }}" width = "350" height ="300"  alt=""> {% else %}  Image coming soon  {% endif %}
@@ -152,25 +152,25 @@
           </div>
           <div class="col-md-6 align-self-center">
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-6 col-sm-6">
                 <div class="count-area-content">
                   <div class="count-digit">945</div>
                   <div class="count-title">Work Hours</div>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 col-sm-6">
                 <div class="count-area-content">
                   <div class="count-digit">1280</div>
                   <div class="count-title">Great Reviews</div>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 col-sm-6">
                 <div class="count-area-content">
                   <div class="count-digit">578</div>
                   <div class="count-title">Projects Done</div>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 col-sm-6">
                 <div class="count-area-content">
                   <div class="count-digit">26</div>
                   <div class="count-title">Awards Won</div>
