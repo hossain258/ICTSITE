@@ -10,6 +10,7 @@ from.models import Dynamicslider
 from.models import Gallery
 from.models import Team
 from django.views.generic.list import ListView
+from django.core.paginator import Paginator
 
 
 # Create your views here.
@@ -19,7 +20,7 @@ def home(request):
     obj = aboutus.objects.all()[0]
     # qs = aboutus.objects.all()
     qs = services.objects.all()
-    cdata = clientdata.objects.all()
+    client_list = clientdata.objects.all()
     sliderdata =Dynamicslider.objects.all()
    
    
@@ -28,7 +29,7 @@ def home(request):
         'object':obj,
         'Title': 'Home',
         'qs':qs,
-        'cdata':cdata,
+        'client_list':client_list,
         'sliderdata':sliderdata,
         
         
@@ -39,15 +40,18 @@ def about(request):
     # img1=("http://127.0.0.1:8000/static/assets/images/more-info.jpg","http://127.0.0.1:8000/static/assets/images/service_01.jpg","http://127.0.0.1:8000/static/assets/images/service_03.jpg")
     
     obj = aboutus.objects.all()[0]
+    qs = services.objects.all()
     diction = {
         'object':obj,
         'Title': 'About',
+        'qs':qs,
         
         
     }
     return render(request, 'about.html', context=diction)
 
 def contact(request):
+    
     if request.method == "POST":
         name = request.POST['name']
         email = request.POST['email']
@@ -57,11 +61,15 @@ def contact(request):
         values.save()
         return render (request, 'sendmsg.html')
         
+        
     
+    qs= services.objects.all()   
     
     diction = {
         
-        'Title': 'Contact'
+        'Title': 'Contact',
+        'qs'   : qs
+    
      }
     return render(request, 'contact.html', context=diction)
 
@@ -96,10 +104,12 @@ class ServiceListView(ListView):
 
 def serviceDetails(request, id):
     servicedata = services.objects.get(id=id)
+    qs = services.objects.all()
     
     diction = {
         'Title':'services details',
-        'servicedata':servicedata
+        'servicedata':servicedata,
+        'qs':qs,
     }
     return render(request, 'service_details.html', context=diction)
     
@@ -117,39 +127,46 @@ class ClientListView(ListView):
     
     model = clientdata
     template_name = 'client.html'
-    paginate_by = 1
-    context_object_name ='cdata'    
+    paginate_by = 4
+    context_object_name ='client_list'    
  
     
     
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['cdata'] = clientdata.objects.all()
+        context['client_list'] = clientdata.objects.all()
+        context ['qs'] = services.objects.all()
         context['Title'] = 'Client'
         return context
 
 def portfolio(request):
     portfdata= Portfolio.objects.all()
+    qs = services.objects.all()
     diction = {
         'Title':'Portfolio',
-        'portfdata':portfdata
+        'portfdata':portfdata,
+        'qs':qs,
     }
     return render(request, 'portfolio.html', context=diction)
 
 
 def portfolioDetails(request, id):
-    portfoliodata = Portfolio.objects.get(id=id)    
+    portfoliodata = Portfolio.objects.get(id=id) 
+    qs = services.objects.all()   
     diction ={
         'Title':'Portfolio details',
-        'portfoliodata':portfoliodata
+        'portfoliodata':portfoliodata,
+        'qs':qs,
     }
     return render(request, 'portfolio_details.html', context=diction)
 
 
 def privacy(request):
+    
     diction = {
         'Title': 'Privacy Policy'
+        
     }
     return render(request, 'privacy.html', context=diction)
 
@@ -157,18 +174,23 @@ def privacy(request):
 
 def gallery(request):
     galrdata= Gallery.objects.all()
+    qs = services.objects.all()
     diction = {
         'Title':'Gallery',
-        'galrdata':galrdata
+        'galrdata':galrdata,
+        'qs':qs,
+        
     }
     return render(request, 'Gallery.html', context=diction)
 
 
 def team(request):
     tmdata= Team.objects.all()
+    qs = services.objects.all()
     diction = {
         'Title':'Team',
-        'tmdata':tmdata
+        'tmdata':tmdata,
+        'qs':qs,
     }
     return render(request, 'team.html', context=diction)
 
