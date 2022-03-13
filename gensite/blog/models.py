@@ -1,5 +1,4 @@
-from distutils.command.upload import upload
-from tokenize import blank_re
+
 from django.db import models
 from ckeditor.fields import RichTextField
 
