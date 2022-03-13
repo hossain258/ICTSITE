@@ -207,5 +207,12 @@ transition: all .3s ease;
     .service-item .down-content h4{
         font-size: 15px !important;
     }
+    .sendmsg h2{
+        font-size: 15px;
+    }
+    .sendmsg{
+        margin: 20px !important;
+        padding: 25px !important;
+    }
 
 }
