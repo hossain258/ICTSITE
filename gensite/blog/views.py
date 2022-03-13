@@ -128,8 +128,8 @@ class ClientListView(ListView):
     model = clientdata
     template_name = 'client.html'
     paginate_by = 4
-    context_object_name ='client_list'    
- 
+    ordering = ['title']
+    context_object_name ='client_list'  
     
     
 

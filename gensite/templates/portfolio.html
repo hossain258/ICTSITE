@@ -1,43 +1,35 @@
 {% extends 'base.html' %}
- {% load static  %}
-
- {% block content %}
-
-
-<div class="services pb-5">
-  <div class="container">
-    
-    <div class="row">
-      <div class="col-md-12">
-        <div class="section-heading">
-          <h2>OUR <em>PORTFOLIO</em></h2>
-          
+{% load static  %}
+{% block content %}
+    <div class="services pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>
+                            OUR <em>PORTFOLIO</em>
+                        </h2>
+                    </div>
+                </div>
+                {% if i.description %}
+                    <p>
+                        {{ portfoliodata.Description }}
+                    </p>
+                {% else %}
+                {% endif %}
+                {% for i in portfdata %}
+                    <div class="col-md-4">
+                        <div class="service-item wow animate__animated animate__zoomIn">
+                            <a href ="{% url 'portfolio-details' id=i.id %}">
+                                <img src="{{ i.image.url }}"  width = "300" height ="300" alt="">
+                            </a>
+                            <div class="down-content">
+                                <h4>{{ i.title }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
-      </div>
-
-      {% if i.description %}
-
-      <p>{{ portfoliodata.Description }} </p>
-
-      {% else %} {% endif %}
-      {% for i in portfdata %}
-      <div class="col-md-4">
-        <div class="service-item wow animate__animated animate__zoomIn" >
-        <a href ="{% url 'portfolio-details' id=i.id %}" ><img src="{{ i.image.url }}"  width = "300" height ="300" alt=""> </a>   
-          <div class="down-content">
-            <h4> {{ i.title }} </h4>
-            
-          </div>
-        </div>
-      </div>
-
-      {% endfor %}        
-      
-
     </div>
-  </div>
-</div>
-
 {% endblock %}
-
-    

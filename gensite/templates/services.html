@@ -1,44 +1,38 @@
 {% extends 'base.html' %}
- {% load static  %}
-
- {% block content %}
-
-
-<div class="services pb-5">
-  <div class="container">
-    
-    <div class="row">
-      <div class="col-md-12">
-        <div class="section-heading">
-          <h2>OUR <em>SERVICES</em></h2>
-          <span>Aliquam id urna imperdiet libero mollis hendrerit</span>
+{% load static  %}
+{% block content %}
+    <div class="services pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>
+                            OUR <em>SERVICES</em>
+                        </h2>
+                        <span>Aliquam id urna imperdiet libero mollis hendrerit</span>
+                    </div>
+                </div>
+                {% for i in qs %}
+                    <div class="col-md-4">
+                        <div class="service-item wow animate__animated animate__zoomIn">
+                            <a href="{% url 'service-details' id=i.id %}">
+                                {% if i.image.url %}
+                                    <img src="{{ i.image.url }}" width = "350" height ="300"  alt="">
+                                {% else %}
+                                    Image coming soon
+                                {% endif %}
+                            </a>
+                            <div class="down-content">
+                                <h4 style=color:tomato;>{{ i.title }}</h4>
+                                <p>
+                                    {{ i.description|slice:":125" }}
+                                </p>
+                                <a href="{% url 'service-details' id=i.id %}" class="filled-button">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
-      </div>
-
-      {% for i in qs %}
-      <div class="col-md-4">
-        <div class="service-item wow animate__animated animate__zoomIn" >
-          <a href="{% url 'service-details' id=i.id %}">
-            {% if i.image.url %} <img src="{{ i.image.url }}" width = "350" height ="300"  alt=""> {% else %}  Image coming soon  {% endif %}
-            {% comment %} <img src="/media/{{ i.image }}"  width = "350" height ="300" alt=""> {% endcomment %}
-            </a>      
-          <div class="down-content">
-            <h4 style=color:tomato;> {{ i.title }} </h4>
-            <p>{{ i.description|slice:":125"}}</p>
-            <a href="{% url 'service-details' id=i.id %}" class="filled-button">Read More </a>
-          </div>
-        </div>
-      </div>         
-
-      {% endfor %}  
-
-    
-      
-
     </div>
-  </div>
-</div>
-
 {% endblock %}
-
-    

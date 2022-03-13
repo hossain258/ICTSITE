@@ -1,45 +1,37 @@
 {% extends 'base.html' %}
- {% load static  %}
-
- {% block content %}
-
-
-<div class="services pb-5">
-  <div class="container">
-    
-    <div class="row">
-      <div class="col-md-12">
-        <div class="section-heading">
-          <h2>OUR <em>TEAM</em></h2>
-         
+{% load static  %}
+{% block content %}
+    <div class="services pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>
+                            OUR <em>TEAM</em>
+                        </h2>
+                    </div>
+                </div>
+                {% for i in tmdata %}
+                    <div class="col-md-4">
+                        <div class="service-item wow animate__animated animate__zoomIn">
+                            {% if i.image.url %}
+                                <img src="{{ i.image.url }}" width = "350" height ="300"  alt="">
+                            {% else %}
+                                Image coming soon
+                            {% endif %}
+                            <div class="down-content">
+                                <h4 style=color:tomato;>{{ i.Name }}</h4>
+                                <p>
+                                    {{ i.title }}
+                                </p>
+                                <p>
+                                    {{ i.qualification }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
-      </div>
-
-      {% for i in tmdata %}
-      <div class="col-md-4">
-        <div class="service-item wow animate__animated animate__zoomIn" >
-         
-            {% if i.image.url %} <img src="{{ i.image.url }}" width = "350" height ="300"  alt=""> {% else %}  Image coming soon  {% endif %}
-            {% comment %} <img src="/media/{{ i.image }}"  width = "350" height ="300" alt=""> {% endcomment %}
-            </a>      
-          <div class="down-content">
-            <h4 style=color:tomato;> {{ i.Name }} </h4>
-            <p>{{ i.title }}</p>
-            <p>{{ i.qualification }}</p>
-            
-          </div>
-        </div>
-      </div>         
-
-      {% endfor %}  
-
-    
-      
-
     </div>
-  </div>
-</div>
-
 {% endblock %}
-
-    

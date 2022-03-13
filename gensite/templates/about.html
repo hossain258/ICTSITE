@@ -1,48 +1,45 @@
 {% extends 'base.html' %}
-
 {% load static %}
-
 {% block content %}
-<div class="more-info pb-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="section-heading">
-          <h2>ABOUT <em>US</em></h2>
-          <span>Aliquam id urna imperdiet libero mollis hendrerit</span>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="more-info-content wow animate__animated animate__zoomIn">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="left-image">
-                <img src="{{ object.image.url }}"  height ="500" alt="">
-              </div>
+    <div class="more-info pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>
+                            ABOUT <em>US</em>
+                        </h2>
+                        <span>Aliquam id urna imperdiet libero mollis hendrerit</span>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="more-info-content wow animate__animated animate__zoomIn">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="left-image">
+                                    <img src="{{ object.image.url }}"  height ="500" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6 align-self-center">
+                                <div class="right-content">
+                                    <h1>{{ object.title|upper }}</h1>
+                                    <br>
+                                    <p>
+                                        {{ object.description }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% if object.files %}
+                        <a href="{{ object.files.url }}"
+                           target="blank"
+                           class="mt-4 mb-5 pt-3 filled-button c-profile float-right pt-2">
+                            Download Compamy Profile &nbsp <i class="fa fa-file-pdf-o"></i>
+                        </a>
+                    {% endif %}
+                </div>
             </div>
-            
-            <div class="col-md-6 align-self-center">
-              <div class="right-content">
-                  <h1> {{ object.title|upper}}</h1>
-                  <br>                   
-                  <p>{{ object.description }}</p>
-              </div>
-            </div>
-          </div>
         </div>
-        {% if object.files %}
-        <a href="{{ object.files.url }}" target="blank" class="mt-4 mb-5 pt-3 filled-button c-profile float-right pt-2">
-          Download Compamy Profile &nbsp <i class="fa fa-file-pdf-o"></i> 
-        </a>
-        {% endif %}
-      </div>
     </div>
-  </div>
-</div>
-
-
-
-
-
-
 {% endblock %}
