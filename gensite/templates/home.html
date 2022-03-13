@@ -87,6 +87,12 @@
                     </a>
                     {% endif %}
                   </div>
+
+                  
+
+
+
+
                 </div>
               </div>
             </div>
@@ -294,20 +300,63 @@
     </div>
     <div class="container">
       <div class="row">
+
+        {% for i in client_list %}
         
-        {% for i in cdata %}
+        
         <div class="col-md-12">
           <div class="owl-partners owl-carousel wow animate__animated animate__zoomIn">
+
+           
+
             <div class="partner-item">
               <img src="{{ i.image.url }}"  width = "140" height ="140" alt="">
               <div class="down-content">
                 <p style=color:red;>{{ i.title }}</p>                
               </div>
-            </div>
+            </div>         
+
+
           </div>
         </div>
       </div>
+      
+
+      
+
       {% endfor %}
+      
+      {{ is_paginated }}
+     <div> {% if is_paginated %}
+
+      {% if client_obj.has_previous %}
+        <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      {% endif %}
+
+      {% for num in client_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+          <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% elif num > client_obj.number|add:'-2' and num < client_obj.number|add:'2' %}
+          <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <a class="btn btn-outline-info mb-4" href="?page={{ client_obj.next_page_number }}">Next</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ client_obj.paginator.num_pages }}">Last</a>
+      {% endif %}
+
+    {% endif %}
+
+  </div>
+
+      
+
+
+
+
+
     </div>
   </div>
   {% endblock %}
