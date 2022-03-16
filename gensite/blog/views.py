@@ -11,15 +11,22 @@ from.models import Gallery
 from.models import Team
 from django.views.generic.list import ListView
 from django.core.paginator import Paginator
+from django.core.mail import EmailMessage, message
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
+from gensite.settings import EMAIL_HOST_USER
 
 
 # Create your views here.
 
+
+    
+
 def home(request):
-    # qs  = services.objects.all()
+    # service_list  = services.objects.all()
     obj = aboutus.objects.all()[0]
-    # qs = aboutus.objects.all()
-    qs = services.objects.all()
+    # service_list = aboutus.objects.all()
+    service_list = services.objects.all()
     client_list = clientdata.objects.all()
     sliderdata =Dynamicslider.objects.all()
    
@@ -28,7 +35,7 @@ def home(request):
         
         'object':obj,
         'Title': 'Home',
-        'qs':qs,
+        'service_list':service_list,
         'client_list':client_list,
         'sliderdata':sliderdata,
         
@@ -37,14 +44,14 @@ def home(request):
     return render(request, 'home.html', context=diction)
 
 def about(request):
-    # img1=("http://127.0.0.1:8000/static/assets/images/more-info.jpg","http://127.0.0.1:8000/static/assets/images/service_01.jpg","http://127.0.0.1:8000/static/assets/images/service_03.jpg")
+   
     
     obj = aboutus.objects.all()[0]
-    qs = services.objects.all()
+    service_list = services.objects.all()
     diction = {
         'object':obj,
         'Title': 'About',
-        'qs':qs,
+        'service_list':service_list,
         
         
     }
@@ -59,25 +66,35 @@ def contact(request):
         message = request.POST['message']
         values = contactus(name=name, email=email,phone_Number=phone_Number,message=message)        
         values.save()
+        send_email = EmailMessage(
+            f"""Test""",
+            f"""Sender:{name}""",
+            # from
+            f'{EMAIL_HOST_USER}',
+            # to
+            [email],
+            reply_to=[email],
+            )
+        send_email.send()
         return render (request, 'sendmsg.html')
         
         
     
-    qs= services.objects.all()   
+    service_list = services.objects.all() 
     
     diction = {
         
         'Title': 'Contact',
-        'qs'   : qs
+        'service_list': service_list
     
      }
     return render(request, 'contact.html', context=diction)
 
 # def service(request):
-#     qs = services.objects.all()
+#     service_list = services.objects.all()
 #     diction = {
 #         'Title':'services',
-#         'qs':qs
+#         'service_list':service_list
 #     }
 #     return render(request, 'services.html', context=diction)
 
@@ -86,12 +103,14 @@ def contact(request):
 class ServiceListView(ListView):
 
     model = services
-    template_name = 'services.html'
+    template_name ='services.html'
+    paginate_by = 6
+    context_object_name ='service_list'
     
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['qs'] = services.objects.all()
+        # context['service_list'] = services.objects.all()
         context['Title'] = 'Services'
         return context
 
@@ -104,12 +123,12 @@ class ServiceListView(ListView):
 
 def serviceDetails(request, id):
     servicedata = services.objects.get(id=id)
-    qs = services.objects.all()
+    service_list = services.objects.all()
     
     diction = {
         'Title':'services details',
         'servicedata':servicedata,
-        'qs':qs,
+        'service_list':service_list,
     }
     return render(request, 'service_details.html', context=diction)
     
@@ -123,6 +142,53 @@ def serviceDetails(request, id):
 #     }
 #     return render(request, 'client.html', context=diction)
 
+
+
+
+
+
+
+# def clientsss(request):
+#     client_list = clientdata.objects.all()
+#     page = request.GET.get('page', 1)
+
+#     paginator = Paginator(client_list, 4)
+#     try:
+#         clients = paginator.page(page)
+#     except PageNotAnInteger:
+#         clients = paginator.page(1)
+#     except EmptyPage:
+#         clients= paginator.page(paginator.num_pages)
+    
+#     context ={
+        
+#     }
+#     context["clients"]=clients
+
+#     return context
+
+# def client(request):
+#     client_list = clientdata.objects.all()
+#     paginator = Paginator(client_list, 4)
+
+#     page_number = request.GET.get('page')
+#     page_obj = paginator.get_page(page_number)
+#     diction = {
+#         'Title':'Client',
+#         'page_obj':page_obj,
+#     }
+#     return render(request, 'client.html', context=diction)
+
+
+
+
+
+
+
+
+
+
+
 class ClientListView(ListView):
     
     model = clientdata
@@ -135,29 +201,29 @@ class ClientListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['client_list'] = clientdata.objects.all()
-        context ['qs'] = services.objects.all()
+        # context['client_list'] = clientdata.objects.all()
+        context ['service_list'] = services.objects.all()
         context['Title'] = 'Client'
         return context
 
 def portfolio(request):
     portfdata= Portfolio.objects.all()
-    qs = services.objects.all()
+    service_list = services.objects.all()
     diction = {
         'Title':'Portfolio',
         'portfdata':portfdata,
-        'qs':qs,
+        'service_list':service_list,
     }
     return render(request, 'portfolio.html', context=diction)
 
 
 def portfolioDetails(request, id):
     portfoliodata = Portfolio.objects.get(id=id) 
-    qs = services.objects.all()   
+    service_list = services.objects.all()  
     diction ={
         'Title':'Portfolio details',
         'portfoliodata':portfoliodata,
-        'qs':qs,
+        'service_list':service_list,
     }
     return render(request, 'portfolio_details.html', context=diction)
 
@@ -174,11 +240,11 @@ def privacy(request):
 
 def gallery(request):
     galrdata= Gallery.objects.all()
-    qs = services.objects.all()
+    service_list = services.objects.all()
     diction = {
         'Title':'Gallery',
         'galrdata':galrdata,
-        'qs':qs,
+        'service_list':service_list,
         
     }
     return render(request, 'Gallery.html', context=diction)
@@ -186,11 +252,11 @@ def gallery(request):
 
 def team(request):
     tmdata= Team.objects.all()
-    qs = services.objects.all()
+    service_list = services.objects.all()
     diction = {
         'Title':'Team',
         'tmdata':tmdata,
-        'qs':qs,
+        'service_list':service_list,
     }
     return render(request, 'team.html', context=diction)
 

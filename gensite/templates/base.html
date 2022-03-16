@@ -113,7 +113,7 @@ https://templatemo.com/tm-545-finance-business
                                    role="button"
                                    data-toggle="dropdown">OUR SERVICES</a>
                                 <div class="dropdown-menu">
-                                    {% for i in qs %}
+                                    {% for i in service_list %}
                                         <a class="dropdown-item" href="{% url 'service-details' i.id %}">{{ i.title }}</a>
                                     {% endfor %}
                                     <a class="dropdown-item" href="{% url 'service' %}"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> VIEW ALL SERVICES</a>
@@ -143,6 +143,7 @@ https://templatemo.com/tm-545-finance-business
         </header>
         <!-- End navbar -->
         {% block content %}{% endblock %}
+        
         <!-- Footer Starts Here -->
         <footer>
             <div class="container">
