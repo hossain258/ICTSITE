@@ -12,7 +12,7 @@
                         <div class="text-content">
                             <h6>we are ready to help you</h6>
                             <h4>
-                                {{ i.title }}
+                                {{ i.title|striptags }}
                                 <br>
                                 &amp; Consulting
                             </h4>
@@ -77,11 +77,11 @@
                             </div>
                             <div class="col-md-7 align-self-center">
                                 <div class="right-content">
-                                    <h1 style=color:tomato;>{{ object.title|upper }}</h1>
+                                    <h1 style=color:tomato;>{{ object.title|upper|striptags }}</h1>
                                     <br>
                                     <p>
                                         {% if object.description %}
-                                            {{ object.description|slice:":577" }}
+                                            {{ object.description|slice:":577"|striptags }}
                                         {% else %}
                                             Description coming soon
                                         {% endif %}
@@ -117,10 +117,7 @@
                         <hr width=200px,>
                         <span>Aliquam id urna imperdiet libero mollis hendrerit</span>
                     </div>
-                </div>
-
-
-                
+                </div>                
                 
 
 
@@ -137,7 +134,7 @@
                             <div class="down-content">
                                 <h4 style=color:tomato;>{{ i.title }}</h4>
                                 <p>
-                                    {{ i.description|slice:":125" }}
+                                    {{ i.description|striptags|slice:":125" }}
                                 </p>
                                 <a href="{% url 'service-details' id=i.id %}" class="filled-button">Read More</a>
                             </div>
@@ -145,6 +142,46 @@
                     </div>
                 {% endfor %} 
             </div>
+
+            <div class="pagination ">         
+
+               
+
+                
+                {% if service_list.has_previous %}
+                <a class="btn btn-outline-info mb-4" href="?page=1">&laquo; first</a>
+                <a class="btn btn-outline-info mb-4" href="?service_Home_page={{ service_list.previous_page_number }}">previous</a>
+                {% endif %}
+    
+                    
+
+                {% for num in service_list.paginator.page_range %}
+                    {% if service_list.number == num %}
+                    <a class="btn btn-info mb-4" href="?service_Home_page={{ num }}">&laquo; {{ num }}</a>
+                    {% else %}
+                    <a class="btn btn-outline-info mb-4" href="?service_Home_page={{ num }}">{{ num }}</a>
+                    {% endif %}
+
+                {% endfor %}
+        
+                {% if service_list.has_next %}
+                    <a class="btn btn-outline-info mb-4" href="?service_Home_page={{ service_list.next_page_number }}">next</a>
+                    <a class="btn btn-outline-info mb-4" href="?service_Home_page={{ service_list.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}                   
+                
+          
+        </div> 
+        
+
+
+
+
+
+
+
+
+
+
         </div>
     </div>
     <!-- end services-->
@@ -337,28 +374,39 @@
                 <div class="col-md-3">
                     <img src="{{ i.image.url }}"  width = "140" height ="140" alt="">
                     <div class="down-content">
-                        <p style=color:red;>{{ i.title }}</p>                
+                        <p style=color:red;>{{ i.title|striptags }}</p>                
                     </div>
                 </div>
                 {% endfor %}
             </div>
             
-            <div class="pagination">
-                <span class="step-links">
-                    {% if page_obj.has_previous %}
-                        <a href="?page=1">&laquo; first</a>
-                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            <div class="pagination pt-4">         
+
+               
+
+                
+                    {% if client_list.has_previous %}
+                    <a class="btn btn-outline-info mb-4" href="?page=1">&laquo; first</a>
+                    <a class="btn btn-outline-info mb-4" href="?client_Home_page={{ client_list.previous_page_number }}">previous</a>
                     {% endif %}
+        
+                        
+
+                    {% for num in client_list.paginator.page_range %}
+                        {% if client_list.number == num %}
+                        <a class="btn btn-info mb-4" href="?page1={{ num }}">&laquo; {{ num }}</a>
+                        {% else %}
+                        <a class="btn btn-outline-info mb-4" href="?client_Home_page={{ num }}">{{ num }}</a>
+                        {% endif %}
+
+				    {% endfor %}
             
-                    <span class="current">
-                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-                    </span>
-            
-                    {% if page_obj.has_next %}
-                        <a href="?page={{ page_obj.next_page_number }}">next</a>
-                        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
-                    {% endif %}
-                </span>
+                    {% if client_list.has_next %}
+                        <a class="btn btn-outline-info mb-4" href="?client_Home_page={{ client_list.next_page_number }}">next</a>
+                        <a class="btn btn-outline-info mb-4" href="?client_Home_page={{ client_list.paginator.num_pages }}">last &raquo;</a>
+                    {% endif %}                   
+                    
+              
             </div> 
             
             {% comment %} <div class="row">

@@ -8,7 +8,7 @@
         </div>
       </div>
       {% if i.description %}
-      <p>{{ portfoliodata.Description }}</p>
+      <p>{{ portfoliodata.Description|striptags }}</p>
       {% else %} {% endif %} {% for i in portfdata %}
       <div class="col-md-4">
         <div class="service-item wow animate__animated animate__zoomIn">
@@ -16,7 +16,7 @@
             <img src="{{ i.image.url }}" width="300" height="300" alt="" />
           </a>
           <div class="down-content">
-            <h4>{{ i.title }}</h4>
+            <h4>{{ i.title|striptags }}</h4>
           </div>
         </div>
       </div>

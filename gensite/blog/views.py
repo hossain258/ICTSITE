@@ -24,11 +24,30 @@ from gensite.settings import EMAIL_HOST_USER
 
 def home(request):
     # service_list  = services.objects.all()
+    sliderdata =Dynamicslider.objects.all()
     obj = aboutus.objects.all()[0]
     # service_list = aboutus.objects.all()
     service_list = services.objects.all()
+    paginator = Paginator(service_list, 6)
+    page = request.GET.get('service_Home_page')
+    try:
+        service_list = paginator.page(page)
+    except PageNotAnInteger:
+        service_list = paginator.page(1)
+    except EmptyPage:
+        service_list = paginator.page(paginator.num_pages)
+
+    
     client_list = clientdata.objects.all()
-    sliderdata =Dynamicslider.objects.all()
+    paginator = Paginator(client_list, 4)
+    page = request.GET.get('client_Home_page')
+    try:
+        client_list = paginator.page(page)
+    except PageNotAnInteger:
+        client_list = paginator.page(1)
+    except EmptyPage:
+        client_list = paginator.page(paginator.num_pages)
+    
    
    
     diction = {
@@ -67,7 +86,7 @@ def contact(request):
         values = contactus(name=name, email=email,phone_Number=phone_Number,message=message)        
         values.save()
         send_email = EmailMessage(
-            f"""Test""",
+            f""" There is a message """,
             f"""Sender:{name}""",
             # from
             f'{EMAIL_HOST_USER}',

@@ -19,7 +19,7 @@
 			<div class="col-md-3">
 				<img src="{{ i.image.url }}"  width = "140" height ="140" alt="">
 				<div class="down-content">
-					<p style=color:red;>{{ i.title }}</p>                
+					<p style=color:red;>{{ i.title|striptags }}</p>                
 				</div>
 			</div>
 			{% endfor %}
@@ -56,9 +56,11 @@
 				{% endif %}
 			</span>
 		</div> {% endcomment %}
+		<div class="pagination pt-4" >
 
+			{% block page %}{% include 'pagination.html' %}{%endblock %}
 
-		{% block page %}{% include 'pagination.html' %}{%endblock %}
+		</div>
 
 		
 		
