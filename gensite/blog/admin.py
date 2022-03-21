@@ -24,3 +24,7 @@ admin.site.register(Team)
 
 class contactusAdmin(admin.ModelAdmin):
     list_display = [ 'name', 'email','date_created']
+    search_fields = ('name',)
+    list_filter =('date_created',)
+    list_per_page = 10
+    # list_editable =('date_created',)

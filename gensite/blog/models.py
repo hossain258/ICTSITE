@@ -41,6 +41,7 @@ class services(models.Model):
     description = RichTextField( blank =True, null = True)
     image = models.ImageField(blank=True, null = True, upload_to ='services_images')
     thumbnail_image =models.ImageField(blank=True, null = True, upload_to ='servicesDeatils')
+    is_featured =models.BooleanField(default=False)
     
     
     def __str__(self) :
@@ -52,6 +53,7 @@ class clientdata(models.Model):
     title =models.CharField(max_length=100)
     
     image = models.ImageField(blank=True, null = True, upload_to ='client_images')
+    is_featured =models.BooleanField(default=False)
     
     
     def __str__(self) :
