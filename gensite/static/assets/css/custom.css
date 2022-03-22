@@ -216,3 +216,30 @@ transition: all .3s ease;
     }
 
 }
+.clients-item{
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 1px 2px 4px #f7f7f7;
+    text-align: center;
+    padding: 5px;
+}
+.clients-item .down-content p{
+    color: #01bbf0;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.pagination > .row{
+    margin: 0 auto !important;
+}
+.btn-info {
+    color: #fff;
+    background-color: #01bbf0 !important;
+    border-color: #01bbf0 !important;
+}
+.btn-outline-info {
+    color: #01bbf0;
+    background-color: transparent;
+    background-image: none;
+    border-color: #01bbf0;
+}
