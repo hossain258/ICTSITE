@@ -168,7 +168,7 @@ transition: all .3s ease;
 
 @media (max-width: 768px) {
     .site-logo{
-        width: 250px !important;
+        width: 200px !important;
     }
     .navbar-toggler{
         background: transparent !important;

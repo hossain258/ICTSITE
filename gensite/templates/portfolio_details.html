@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 {% load static  %}
 {% block content %}
-    <div class="portfolio-details pt-5 ">
+
+    <div class="services pb-5 portfolio-details pt-5 ">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-heading">
                         <h2>
-                            OUR <em>PORTFOLIO DETAILS</em>
+                            PORTFOLIO <em>DETAILS</em>
                         </h2>
                     </div>
                     <div class="service-item wow animate__animated animate__zoomIn">
@@ -23,6 +24,7 @@
                             </div>
                         </div>
                     </div>
+                    <a class="float-right mt-4 mb-5" href="{% url 'portfolio' %}"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back</a>
                 </div>
             </div>
         </div>

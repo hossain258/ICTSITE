@@ -16,7 +16,7 @@
 		<div class="row">
 			{% for i in client_list %}
 			<div class="col-md-3">
-				<div class="clients-item">
+				<div class="clients-item mb-4">
 					<img src="{{ i.image.url }}"  width = "140" height ="140" alt="">
 					<div class="down-content">
 						<p>{{ i.title|striptags }}</p>                
@@ -60,7 +60,7 @@
 		<div class="pagination pt-4" >
 			{% block page %}{% include 'pagination.html' %}{%endblock %}
 		</div>
-		
+
 	</div>
 </div>
 
