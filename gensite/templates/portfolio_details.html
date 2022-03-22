@@ -10,17 +10,22 @@
                             OUR <em>PORTFOLIO DETAILS</em>
                         </h2>
                     </div>
-                </div>
-                <div class="col-md-8 ">
                     <div class="service-item wow animate__animated animate__zoomIn">
-                        <div class="down-content ">
-                            <p>
-                                {{ portfoliodata.description|striptags }}
-                            </p>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class="pt-4 pl-4" src="{{ portfoliodata.image.url }}" alt="" />
+                            </div>
+                            <div class="col-md-8">
+                                <div class="down-content">
+                                    <h4>{{ portfoliodata.title|striptags }}</h4>
+                                    <p>{{ portfoliodata.description|striptags }}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <br><br>
 {% endblock %}
