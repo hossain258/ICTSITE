@@ -13,13 +13,13 @@
                     </div>
                     <div class="service-item wow animate__animated animate__zoomIn">
                         <div class="row">
-                            <div class="col-md-4">
+                            {% comment %} <div class="col-md-4">
                                 <img class="pt-4 pl-4" src="{{ portfoliodata.image.url }}" alt="" />
-                            </div>
-                            <div class="col-md-8">
+                            </div> {% endcomment %}
+                            <div class="col-md-12">
                                 <div class="down-content">
-                                    <h4>{{ portfoliodata.title|striptags }}</h4>
-                                    <p>{{ portfoliodata.description|striptags }}</p>
+                                    <h4>{{ portfoliodata.title|striptags|safe|upper }}</h4>
+                                    <p>{{ portfoliodata.description|striptags|safe }}</p>
                                 </div>
                             </div>
                         </div>
