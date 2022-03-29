@@ -368,81 +368,119 @@
                 Our <em>Client</em>
             </h2>
         </div>
-        <div class="container">
-            <div class="row">
-                {% for i in client_list %}
-                <div class="col-md-3">
-                  <div class="clients-item mb-4">
-                    <img src="{{ i.image.url }}"  width = "140" height ="140" alt="">
-                    <div class="down-content">
-                      <p>{{ i.title|striptags }}</p>                
-                    </div>
-                  </div>
-                </div>
-                {% endfor %}
-            </div>
-            <a href="{% url 'client' %}" class="float-right mt-4 mb-5">See All Clients <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-            <br><br>
-            {% comment %} 
-            <div class="pagination pt-4">    
-              {% if client_list.has_previous %}
-                <a class="btn btn-outline-info mb-4" href="?page=1">&laquo; first</a>
-                <a class="btn btn-outline-info mb-4" href="?client_Home_page={{ client_list.previous_page_number }}">previous</a>
-              {% endif %}
-              {% for num in client_list.paginator.page_range %}
-                  {% if client_list.number == num %}
-                  <a class="btn btn-info mb-4" href="?page1={{ num }}">&laquo; {{ num }}</a>
-                  {% else %}
-                  <a class="btn btn-outline-info mb-4" href="?client_Home_page={{ num }}">{{ num }}</a>
-                  {% endif %}
-              {% endfor %}
-              {% if client_list.has_next %}
-                  <a class="btn btn-outline-info mb-4" href="?client_Home_page={{ client_list.next_page_number }}">next</a>
-                  <a class="btn btn-outline-info mb-4" href="?client_Home_page={{ client_list.paginator.num_pages }}">last &raquo;</a>
-              {% endif %} 
-            </div>  
-            {% endcomment %}
-            
-            {% comment %} <div class="row">
-                <div class="col-lg-12"> {% endcomment %}
-                    {% comment %} {% if is_paginated %} {% endcomment %}
-                        {% comment %} {% if clients.has_previous %}
-                            <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
-                            <a class="btn btn-outline-info mb-4"
-                               href="?page={{ clients.previous_page_number }}">Previous</a>
+
+<!-- Client slider content -->
+    <!-- <div class="container">
+        <div class="">
+            <div id="carousel-example" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                    
+                    {% for i in client_list %}
+                    <h1>{{ i }}</h1>
+                        {% if i == 1 %}
+                            <div class="clients-item mb-4 carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+                                <img src="{{ i.image.url }}" class="img-fluid mx-auto d-block" width="140" height="140" alt="Client">
+                                <div class="down-content">
+                                    <p>{{ i.title|striptags }}</p>                
+                                </div>
+                            </div>
+                            {% else %}
+                            <div class="clients-item mb-4 carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                                <img src="{{ i.image.url }}" class="img-fluid mx-auto d-block" width="140" height="140" alt="Client">
+                                <div class="down-content">
+                                    <p>{{ i.title|striptags }}</p>                
+                                </div>
+                            </div>
                         {% endif %}
-                        {% for num in clients.paginator.page_range %}
-                            {% if clients.number == num %}
-                                <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
-                            {% elif num > clients.number|add:'-3' and num < clients.number|add:'3' %}
-                                <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
-                            {% endif %}
-                        {% endfor %}
-                        {% if clients.has_next %}
-                            <a class="btn btn-outline-info mb-4 "
-                               href="?page={{ clients.next_page_number }}">Next</a>
-                            <a class="btn btn-outline-info mb-4 "
-                               href="?page={{ clients.paginator.num_pages }}">Last</a>
-                        {% endif %} {% endcomment %}
-                    {% comment %} {% endif %} {% endcomment %}
-                {% comment %} </div> {% endcomment %}
-            {% comment %} </div> {% endcomment %}
-            {% comment %} <div class="col-md-12">
-          <div class="owl-partners owl-carousel wow animate__animated animate__zoomIn">
-
-           
-
-            <div class="partner-item">
-              <img src="{{ i.image.url }}"  width = "140" height ="140" alt="">
-              <div class="down-content">
-                <p style=color:red;>{{ i.title }}</p>                
-              </div>
-            </div>         
-
-
-          </div>
+                    {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
-      </div>
+    </div> -->
+
+    <div class="container">
+        <div class="row">
+            {% for i in client_list %}
+            <div class="col-md-3">
+                <div class="clients-item mb-4">
+                <img src="{{ i.image.url }}"  width = "140" height ="140" alt="">
+                <div class="down-content">
+                    <p>{{ i.title|striptags }}</p>                
+                </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="{% url 'client' %}" class="float-right mt-4 mb-5">See All Clients <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+        <br><br>
+        {% comment %} 
+        <div class="pagination pt-4">    
+            {% if client_list.has_previous %}
+            <a class="btn btn-outline-info mb-4" href="?page=1">&laquo; first</a>
+            <a class="btn btn-outline-info mb-4" href="?client_Home_page={{ client_list.previous_page_number }}">previous</a>
+            {% endif %}
+            {% for num in client_list.paginator.page_range %}
+                {% if client_list.number == num %}
+                <a class="btn btn-info mb-4" href="?page1={{ num }}">&laquo; {{ num }}</a>
+                {% else %}
+                <a class="btn btn-outline-info mb-4" href="?client_Home_page={{ num }}">{{ num }}</a>
+                {% endif %}
+            {% endfor %}
+            {% if client_list.has_next %}
+                <a class="btn btn-outline-info mb-4" href="?client_Home_page={{ client_list.next_page_number }}">next</a>
+                <a class="btn btn-outline-info mb-4" href="?client_Home_page={{ client_list.paginator.num_pages }}">last &raquo;</a>
+            {% endif %} 
+        </div>  
+        {% endcomment %}
+        
+        {% comment %} <div class="row">
+            <div class="col-lg-12"> {% endcomment %}
+                {% comment %} {% if is_paginated %} {% endcomment %}
+                    {% comment %} {% if clients.has_previous %}
+                        <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+                        <a class="btn btn-outline-info mb-4"
+                            href="?page={{ clients.previous_page_number }}">Previous</a>
+                    {% endif %}
+                    {% for num in clients.paginator.page_range %}
+                        {% if clients.number == num %}
+                            <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+                        {% elif num > clients.number|add:'-3' and num < clients.number|add:'3' %}
+                            <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+                        {% endif %}
+                    {% endfor %}
+                    {% if clients.has_next %}
+                        <a class="btn btn-outline-info mb-4 "
+                            href="?page={{ clients.next_page_number }}">Next</a>
+                        <a class="btn btn-outline-info mb-4 "
+                            href="?page={{ clients.paginator.num_pages }}">Last</a>
+                    {% endif %} {% endcomment %}
+                {% comment %} {% endif %} {% endcomment %}
+            {% comment %} </div> {% endcomment %}
+        {% comment %} </div> {% endcomment %}
+        {% comment %} <div class="col-md-12">
+        <div class="owl-partners owl-carousel wow animate__animated animate__zoomIn">
+
+        
+
+        <div class="partner-item">
+            <img src="{{ i.image.url }}"  width = "140" height ="140" alt="">
+            <div class="down-content">
+            <p style=color:red;>{{ i.title }}</p>                
+            </div>
+        </div>         
+
+
+        </div>
+    </div>
+    </div>
       
 
       

@@ -301,14 +301,42 @@ https://templatemo.com/tm-545-finance-business
         <script src="{% static 'assets/js/accordions.js' %}"></script>
         <script src="{% static 'vendor/lightbox2-master/dist/js/lightbox-plus-jquery.min.js' %}"></script>
         <script language = "text/Javascript">
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
-          t.style.color='#fff';
-          }
-      }
+            cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+            function clearField(t){                   //declaring the array outside of the
+            if(! cleared[t.id]){                      // function makes it static and global
+                cleared[t.id] = 1;  // you could use true and false, but that's more typing
+                t.value='';         // with more chance of typos
+                t.style.color='#fff';
+                }
+            }
+        </script>
+
+        <script>
+            /*
+                Carousel
+            */
+            $('#carousel-example').on('slide.bs.carousel', function (e) {
+                /*
+                    CC 2.0 License Iatek LLC 2018 - Attribution required
+                */
+                var $e = $(e.relatedTarget);
+                var idx = $e.index();
+                var itemsPerSlide = 5;
+                var totalItems = $('.carousel-item').length;
+            
+                if (idx >= totalItems-(itemsPerSlide-1)) {
+                    var it = itemsPerSlide - (totalItems - idx);
+                    for (var i=0; i<it; i++) {
+                        // append slides to end
+                        if (e.direction=="left") {
+                            $('.carousel-item').eq(i).appendTo('.carousel-inner');
+                        }
+                        else {
+                            $('.carousel-item').eq(0).appendTo('.carousel-inner');
+                        }
+                    }
+                }
+            });
         </script>
     </body>
 </html>
