@@ -40,7 +40,7 @@ def home(request):
     #     service_list = paginator.page(paginator.num_pages)
 
     
-    client_list = clientdata.objects.filter(is_featured=True)
+    client_list = clientdata.objects.filter() #is_featured=True
     # paginator = Paginator(client_list, 4)
     # page = request.GET.get('client_Home_page')
     # try:
