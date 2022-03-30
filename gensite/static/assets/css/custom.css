@@ -222,6 +222,11 @@ transition: all .3s ease;
     box-shadow: 1px 2px 4px #f7f7f7;
     text-align: center;
     padding: 5px;
+    overflow: hidden;
+}
+..clients-item img{
+    height: 100px !important;
+    width: auto !important;
 }
 .clients-item .down-content p{
     color: #01bbf0;
