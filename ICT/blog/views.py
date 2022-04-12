@@ -1,6 +1,6 @@
 from re import template
 from django.http import HttpResponse
-from django.shortcuts import render 
+from django.shortcuts import render,redirect 
 from.models import Team, aboutus
 from.models import contactus
 from.models import services
@@ -13,8 +13,8 @@ from django.views.generic.list import ListView
 from django.core.paginator import Paginator
 from django.core.mail import EmailMessage, message
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
-from gensite.settings import EMAIL_HOST_USER
+from django.contrib import messages
+from ICT.settings import EMAIL_HOST_USER
 
 
 # Create your views here.
@@ -87,17 +87,20 @@ def contact(request):
         message = request.POST['message']
         values = contactus(name=name, email=email,phone_Number=phone_Number,message=message)        
         values.save()
-        send_email = EmailMessage(
-            f"""  message from ICTINEX """,
-            f"""Sender:{name}""",
-            # from
-            f'{EMAIL_HOST_USER}',
-            # to
-            [email],
-            reply_to=[email],
-            )
-        send_email.send()
-        return render (request, 'sendmsg.html')
+        # send_email = EmailMessage(
+        #     f"""  message from ICTINEX """,
+        #     f"""Sender:{name}""",
+        #     # from
+        #     f'{EMAIL_HOST_USER}',
+        #     # to
+        #     [email],
+        #     reply_to=[email],
+        #     )
+        # send_email.send()
+        messages.success(request,"The message has been successfully submitted !!")
+        return redirect('contact')
+        
+    return render(request, 'contact.html')
         
         
     

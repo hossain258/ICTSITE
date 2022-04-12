@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
+# import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -35,8 +36,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'blog',
-    'ckeditor',
-    
+    'ckeditor',    
     'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'gensite.urls'
+ROOT_URLCONF = 'ICT.urls'
 
 TEMPLATES = [
     {
@@ -75,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'gensite.wsgi.application'
+WSGI_APPLICATION = 'ICT.wsgi.application'
 
 
 # Database
@@ -144,5 +144,30 @@ EMAIL_HOST_USER = ""
 EMAIL_HOST_PASSWORD = ""
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
+
+
+
+JAZZMIN_SETTINGS = {
+  
+    "site_title":"ICT ADMIN",
+    
+    "site_header": "ICT ADMIN", 
+    "site_brand": "ICT ADMINSTRATION", 
+    "welcome_sign": "Welcome to ICTINEX Admin Area",
+     
+
+    "order_with_respect_to": ['blog.Dynamicslider','blog.Aboutus','blog.Services','blog.Contactus','blog.Clientdata'],
+    "copyright": "ICTINEX Dev By CLOUDNEXT",
+   
+    
+    
+}
+
+
+
+
+# Initialise environment variables
+# env = environ.Env()
+# environ.Env.read_env()
 
 

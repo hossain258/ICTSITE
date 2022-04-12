@@ -12,8 +12,8 @@ header .navbar{
     margin: 0px !important;
 }
 .navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .active>.nav-link, .navbar .navbar-nav .nav-link.current, .navbar .navbar-nav .nav-link.show, .navbar .navbar-nav .show>.nav-link {
-    color: #01bbf0;
-    border-bottom: 4px solid #01bbf0 !important;
+    color: #006778;
+    border-bottom: 4px solid #006778 !important;
 }
 
 .nav-link {
@@ -23,7 +23,7 @@ header .navbar{
     display: none;
     position: absolute;
     width: 270px;
-    box-shadow: 5px 5px 10px #01bbf0
+    box-shadow: 5px 5px 10px #D2386C;
 }
 .new-dropdown-item{
     padding: 0;
@@ -34,8 +34,8 @@ header .navbar{
     margin: 0;
 }
 .new-dropdown-item li a:hover {
-    border-left: 5px solid #01bbf0;
-    color: #01bbf0 !important;
+    border-left: 5px solid #006778;
+    color: #D2386C !important;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
@@ -49,7 +49,7 @@ header .navbar{
     color: #616161 !important;
     background: #fff;
     text-align: left;
-    border-bottom: 1px solid #01bbf0;
+    border-bottom: 1px solid #006778;
     -webkit-transition: all .3s ease;
 -moz-transition: all .3s ease;
 -ms-transition: all .3s ease;
@@ -126,7 +126,7 @@ transition: all .3s ease;
     height: 92px;
     width: 92px;
     border: 1px dashed #01bbf0;
-    color: #01bbf0;
+    color: #D2386C;
 }
 .feature-sec .feature-item .title-txt h5{
     font-size: 15px;
@@ -154,7 +154,7 @@ transition: all .3s ease;
     border-radius: 0 !important;
 }
 .dropdown-item:focus, .dropdown-item:active, .dropdown-item:hover {
-    background-color: #01bbf0 !important;
+    background-color: #006778!important;
 }
 .service-item .down-content h4{
     font-size: 18px !important;
@@ -224,7 +224,7 @@ transition: all .3s ease;
     padding: 5px;
     overflow: hidden;
 }
-..clients-item img{
+.clients-item img{
     height: 100px !important;
     width: auto !important;
 }

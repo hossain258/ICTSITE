@@ -4,6 +4,7 @@
     <!-- Page Content -->
     <!-- Banner Starts Here -->
     <div class="main-banner header-text" id="top">
+
         <div class="Modern-Slider">
             {% for i in sliderdata %}
                 <div class="item item-1">
@@ -29,7 +30,7 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6">
                         <div class="feature-item wow animate__animated  animate__jackInTheBox">
-                            <i class="fa fa-phone"></i>
+                            <i class="fa fa-wifi"></i>
                             <div class="title-txt">
                                 <h5>OPTICAL FIBRE CONNECTIVITY</h5>
                             </div>
@@ -143,7 +144,7 @@
                 {% endfor %} 
             </div>
 
-            <a href="{% url 'service' %}" class="btn btn-primary float-right pt-2 mb-5">See All <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+            <a href="{% url 'service' %}" class="btn btn float-right pt-2 mb-5">See All <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
 
         
 {% comment %} 
@@ -411,10 +412,10 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
-                </div>
+                {% comment %} </div>
                 <a href="{% url 'client' %}" class="float-right mt-4 mb-5">See All Clients <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                 <br><br>
-            </div>
+            </div> {% endcomment %}
         </div>
 
         

@@ -6,6 +6,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
+        {% for msg in messages %}
+        <div class="alert alert-success" role="alert">
+                {{ msg }}
+        </div>
+        {% endfor %}
+
         <div class="section-heading mt-5">
           <h2>Request a <em>call back</em></h2>
         </div>
@@ -77,9 +83,6 @@
     </div>
   </div>
 </div>
-
-
-
 
 
 
